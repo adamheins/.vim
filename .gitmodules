@@ -1,0 +1,24 @@
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "bundle/rust"]
+	path = bundle/rust
+	url = git@github.com:rust-lang/rust.vim.git
+[submodule "bundle/better-whitespace"]
+	path = bundle/better-whitespace
+	url = git@github.com:ntpeters/vim-better-whitespace.git
+[submodule "bundle/jade"]
+	path = bundle/jade
+	url = git@github.com:digitaltoad/vim-jade.git
+[submodule "bundle/neatstatus"]
+	path = bundle/neatstatus
+	url = git@github.com:adamheins/vim-neatstatus.git
+[submodule "bundle/numbertoggle"]
+	path = bundle/numbertoggle
+	url = git@github.com:jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = git@github.com:tpope/vim-vinegar.git
