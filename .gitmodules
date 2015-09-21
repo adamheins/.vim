@@ -25,3 +25,12 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = git@github.com:tomtom/tcomment_vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/cmdalias"]
+	path = bundle/cmdalias
+	url = git@github.com:vim-scripts/cmdalias.vim.git
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = git@github.com:tpope/vim-abolish.git
