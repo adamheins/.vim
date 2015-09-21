@@ -34,3 +34,6 @@
 [submodule "bundle/abolish"]
 	path = bundle/abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule "bundle/adam-util"]
+	path = bundle/adam-util
+	url = git@github.com:adamheins/vim-adam-util.git
