@@ -37,3 +37,12 @@
 [submodule "bundle/adam-util"]
 	path = bundle/adam-util
 	url = git@github.com:adamheins/vim-adam-util.git
+[submodule "bundle/a"]
+	path = bundle/a
+	url = git@github.com:vim-scripts/a.vim.git
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = git@github.com:tpope/vim-repeat.git
