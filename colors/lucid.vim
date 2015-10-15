@@ -7,7 +7,7 @@ if exists("syntax_on")
 endif
 let colors_name="lucid"
 
-highlight Normal         ctermfg=253  ctermbg=233
+highlight Normal         ctermfg=253  ctermbg=16
 highlight Comment        ctermfg=245               cterm=NONE
 highlight Constant       ctermfg=116               cterm=NONE
 highlight String         ctermfg=150               cterm=NONE
@@ -49,19 +49,19 @@ highlight SpellRare                   ctermbg=13   cterm=undercurl
 highlight SpellLocal                  ctermbg=14   cterm=undercurl
 highlight Cursor         ctermfg=bg   ctermbg=153
 highlight CursorIM       ctermfg=bg   ctermbg=116
-highlight CursorColumn   ctermfg=NONE ctermbg=233  cterm=NONE
+highlight CursorColumn   ctermfg=NONE ctermbg=16  cterm=NONE
 highlight CursorLine     ctermfg=NONE ctermbg=236  cterm=NONE
 highlight ColorColumn                 ctermbg=234
 highlight Directory      ctermfg=151               cterm=NONE
 highlight ErrorMsg       ctermfg=196  ctermbg=NONE cterm=NONE
-highlight VertSplit      ctermfg=242  ctermbg=233  cterm=NONE
-highlight SignColumn     ctermfg=145  ctermbg=233  cterm=NONE
-highlight LineNr         ctermfg=238  ctermbg=233
-highlight CursorLineNr   ctermfg=239  ctermbg=233
+highlight VertSplit      ctermfg=242  ctermbg=16  cterm=NONE
+highlight SignColumn     ctermfg=145  ctermbg=16  cterm=NONE
+highlight LineNr         ctermfg=238  ctermbg=16
+highlight CursorLineNr   ctermfg=239  ctermbg=16
 highlight MatchParen     ctermfg=77   ctermbg=NONE cterm=NONE
 highlight MoreMsg        ctermfg=29                cterm=NONE
 highlight ModeMsg        ctermfg=117  ctermbg=NONE cterm=NONE
-highlight NonText        ctermfg=239  ctermbg=233  cterm=NONE
+highlight NonText        ctermfg=239  ctermbg=16  cterm=NONE
 highlight Question       ctermfg=fg                cterm=NONE
 highlight SpecialKey     ctermfg=239
 highlight Title          ctermfg=74                cterm=NONE
@@ -79,7 +79,7 @@ highlight Pmenu          ctermfg=253  ctermbg=238  cterm=NONE
 highlight PmenuSel       ctermfg=186  ctermbg=238  cterm=NONE
 highlight PMenuSbar                   ctermbg=59   cterm=NONE
 highlight PMenuThumb                  ctermbg=102  cterm=NONE
-highlight StatusLine     ctermfg=254  ctermbg=237  cterm=bold
+highlight StatusLine     ctermfg=254  ctermbg=234  cterm=bold
 highlight StatusLineNC   ctermfg=244  ctermbg=237  cterm=NONE
 highlight TabLine        ctermfg=244  ctermbg=236  cterm=NONE
 highlight TabLineFill    ctermfg=187  ctermbg=236  cterm=NONE
