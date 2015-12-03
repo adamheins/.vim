@@ -89,7 +89,7 @@ call gitgutter#disable()
 
 " ================================= Search =================================== "
 
-set nohlsearch
+set hlsearch
 set ignorecase
 set smartcase
 set incsearch
@@ -127,7 +127,10 @@ command! W w
 
 " ================================ Mappings ================================== "
 
-" Map Y to yank until EOL
+" Set the leader.
+let mapleader = ","
+
+" Map Y to yank until EOL.
 map Y y$
 
 " Map h,k to include wrapped lines.
@@ -152,6 +155,9 @@ nnoremap gK K
 nnoremap J j
 nnoremap K k
 
+" Make escape stop highlighting searches.
+nnoremap <Esc> :noh<CR><Esc>
+
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -159,18 +165,18 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " More useful window mappings.
-nnoremap ,<C-J> :split<CR><C-W><C-J>
-nnoremap ,<C-K> :split<CR>
-nnoremap ,<C-H> :vsplit<CR>
-nnoremap ,<C-L> :vsplit<CR><C-W><C-L>
-nnoremap ,, :bNext<CR>
-nnoremap ,m :enew<CR>
+nnoremap <leader><C-J> :split<CR><C-W><C-J>
+nnoremap <leader><C-K> :split<CR>
+nnoremap <leader><C-H> :vsplit<CR>
+nnoremap <leader><C-L> :vsplit<CR><C-W><C-L>
+nnoremap <leader>, :bNext<CR>
+nnoremap <leader>m :enew<CR>
 
 " CtrlP buffer search.
-noremap ,b :CtrlPBuffer<CR>
+noremap <leader>b :CtrlPBuffer<CR>
 
 " Toggle NERDTree.
-noremap ,n :NERDTreeFind<CR>
+noremap <leader>n :NERDTreeFind<CR>
 
 " Make interaction with the system clipboard easier.
 noremap "" "+p
@@ -178,3 +184,4 @@ vnoremap "' "+y
 
 " Paste from the yank register more quickly.
 noremap "p "0p
+
