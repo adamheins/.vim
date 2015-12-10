@@ -185,3 +185,6 @@ vnoremap "' "+y
 " Paste from the yank register more quickly.
 noremap "p "0p
 
+" Make C-a page down like C-b, since C-b is used as the tmux prefix key.
+nnoremap <C-a> <C-b>
+
