@@ -1,4 +1,7 @@
 " Aliases
+" Supported via the cmdalias plugin.
+" Alias commands must run after other plugins (so plugin commands are defined), so this file is
+" symlinked from the after/plugin directory.
 
 " Shorten the command to strip trailing whitespace.
 Alias sws StripWhitespace
@@ -10,4 +13,12 @@ Alias reload Reload
 Alias gu GitGutterRevertHunk
 Alias gt GitGutterToggle
 
-" TODO cscope aliases
+" Cscope aliases
+call CmdAlias('csc', 'cs find c')
+call CmdAlias('cse', 'cs find e')
+call CmdAlias('csd', 'cs find d')
+call CmdAlias('csf', 'cs find f')
+call CmdAlias('csg', 'cs find g')
+call CmdAlias('csi', 'cs find i')
+call CmdAlias('css', 'cs find s')
+call CmdAlias('cst', 'cs find t')
