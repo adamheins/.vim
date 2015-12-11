@@ -52,3 +52,6 @@
 [submodule "bundle/col"]
 	path = bundle/col
 	url = git@github.com:adamheins/vim-col
+[submodule "bundle/indexed-search"]
+	path = bundle/indexed-search
+	url = git@github.com:adamheins/vim-indexed-search.git
