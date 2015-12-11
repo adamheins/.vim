@@ -13,9 +13,6 @@
 [submodule "bundle/jade"]
 	path = bundle/jade
 	url = git@github.com:digitaltoad/vim-jade.git
-[submodule "bundle/neatstatus"]
-	path = bundle/neatstatus
-	url = git@github.com:adamheins/vim-neatstatus.git
 [submodule "bundle/numbertoggle"]
 	path = bundle/numbertoggle
 	url = git@github.com:jeffkreeftmeijer/vim-numbertoggle.git
@@ -55,3 +52,6 @@
 [submodule "bundle/indexed-search"]
 	path = bundle/indexed-search
 	url = git@github.com:adamheins/vim-indexed-search.git
+[submodule "bundle/simple-status"]
+	path = bundle/simple-status
+	url = git@github.com:adamheins/vim-simple-status.git
