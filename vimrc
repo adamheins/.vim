@@ -188,3 +188,8 @@ noremap "p "0p
 " Make C-a page down like C-b, since C-b is used as the tmux prefix key.
 nnoremap <C-a> <C-b>
 
+" ============================= Auto Commands ================================ "
+
+" Get rid of the python omnifunc, because it can be really slow.
+au FileType python setlocal omnifunc=
+
