@@ -55,3 +55,6 @@
 [submodule "bundle/simple-status"]
 	path = bundle/simple-status
 	url = git@github.com:adamheins/vim-simple-status.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git@github.com:tpope/vim-fugitive

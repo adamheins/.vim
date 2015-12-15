@@ -13,6 +13,10 @@ Alias reload Reload
 Alias gu GitGutterRevertHunk
 Alias gt GitGutterToggle
 
+" Fugitive (more git)
+Alias gb Gblame
+Alias gd Gdiff
+
 " Cscope aliases
 call CmdAlias('csc', 'cs find c')
 call CmdAlias('cse', 'cs find e')
