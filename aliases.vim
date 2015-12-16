@@ -6,6 +6,8 @@
 " Shorten the command to strip trailing whitespace.
 Alias sws StripWhitespace
 
+Alias col Col
+
 " Reload .vimrc without closing vim.
 Alias reload Reload
 
