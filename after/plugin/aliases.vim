@@ -1,1 +1,1 @@
-/Users/adam/.vim/aliases
+/Users/adam/.vim/aliases.vim

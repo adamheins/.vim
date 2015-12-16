@@ -1,7 +1,7 @@
 " Aliases
 " Supported via the cmdalias plugin.
-" Alias commands must run after other plugins (so plugin commands are defined), so this file is
-" symlinked from the after/plugin directory.
+" Alias commands must run after other plugins (so plugin commands are
+" defined), so this file is symlinked from the after/plugin directory.
 
 " Shorten the command to strip trailing whitespace.
 Alias sws StripWhitespace
@@ -18,6 +18,8 @@ Alias gb Gblame
 Alias gd Gdiff
 
 " Cscope aliases
+" NOTE: These use the raw function call instead of the `Alias' keyword because
+" they are aliasing multi-word commands.
 call CmdAlias('csc', 'cs find c')
 call CmdAlias('cse', 'cs find e')
 call CmdAlias('csd', 'cs find d')
