@@ -1,1 +1,1 @@
-au BufNewFile,BufRead ~/.todo set ft=yaml
+au BufNewFile,BufRead ~/.todo set ft=markdown
