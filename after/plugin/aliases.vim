@@ -1,1 +1,1 @@
-/Users/adam/.vim/aliases.vim
+/home/adam/.dotfiles/files/.vim/aliases.vim
