@@ -30,3 +30,6 @@ call CmdAlias('csg', 'cs find g')
 call CmdAlias('csi', 'cs find i')
 call CmdAlias('css', 'cs find s')
 call CmdAlias('cst', 'cs find t')
+
+" FSwitch
+call CmdAlias('fs', 'FS')
