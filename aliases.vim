@@ -19,7 +19,7 @@ Alias gt GitGutterToggle
 Alias gb Gblame
 Alias gd Gdiff
 
-" Cscope aliases
+" Cscope
 " NOTE: These use the raw function call instead of the `Alias' keyword because
 " they are aliasing multi-word commands.
 call CmdAlias('csc', 'cs find c')
@@ -33,3 +33,6 @@ call CmdAlias('cst', 'cs find t')
 
 " FSwitch
 call CmdAlias('fs', 'FS')
+
+" Spell check
+call CmdAlias('spc', 'setlocal spell! spelllang=en')

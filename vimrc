@@ -180,7 +180,8 @@ nnoremap gK K
 nnoremap J j
 nnoremap K k
 
-" Make escape stop highlighting searches.
+" Make escape stop highlighting searches. The call to `redraw!' clears the vim
+" status area.
 nnoremap <Esc> :noh<CR>:redraw!<CR><Esc>
 
 " Make switching between splits easier.
