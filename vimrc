@@ -64,6 +64,9 @@ set updatetime=750
 
 " ================================ Plugins =================================== "
 
+" Note that this area if meant for plugin options and initialization.
+" Plugin-related mappings can be found in the Mappings section.
+
 " Pathogen plugin manager.
 execute pathogen#infect()
 
@@ -213,6 +216,16 @@ noremap "p "0p
 
 " Make C-a page down like C-b, since C-b is used as the tmux prefix key.
 nnoremap <C-a> <C-b>
+
+" Cscope mappings.
+nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <unique> <C-S>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " ============================= Auto Commands ================================ "
 
