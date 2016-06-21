@@ -40,9 +40,6 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = git@github.com:tpope/vim-repeat.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
 [submodule "bundle/col"]
 	path = bundle/col
 	url = git@github.com:adamheins/vim-col
@@ -64,3 +61,6 @@
 [submodule "bundle/fswitch"]
 	path = bundle/fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = git@github.com:easymotion/vim-easymotion

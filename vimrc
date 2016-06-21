@@ -69,6 +69,7 @@ set updatetime=750
 
 " Pathogen plugin manager.
 execute pathogen#infect()
+Helptags
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -84,15 +85,9 @@ let NERDTreeMapUpdir = '..'
 let g:gitgutter_realtime = 1
 call gitgutter#disable()
 
-" Syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
 " FSwitch
 " Define search paths to switch between header and source files.
-augroup nlcppfiles
+augroup cppfiles
   au!
   " Switch from header files to source files.
   " Cases handled:

@@ -12,7 +12,7 @@ Alias col Col
 Alias reload Reload
 
 " GitGutter
-Alias gu GitGutterRevertHunk
+Alias gu GitGutterUndoHunk
 Alias gt GitGutterToggle
 
 " Fugitive (more git)
@@ -20,8 +20,6 @@ Alias gb Gblame
 Alias gd Gdiff
 
 " Cscope
-" NOTE: These use the raw function call instead of the `Alias' keyword because
-" they are aliasing multi-word commands.
 call CmdAlias('csc', 'cs find c')
 call CmdAlias('cse', 'cs find e')
 call CmdAlias('csd', 'cs find d')

@@ -62,6 +62,7 @@ set updatetime=750
 
 " Pathogen plugin manager.
 execute pathogen#infect()
+Helptags
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -79,6 +80,30 @@ call gitgutter#disable()
 
 " Neomake
 autocmd! BufWritePost * Neomake
+
+" Easymotion
+nmap f <Plug>(easymotion-bd-f)
+
+" FSwitch
+" Define search paths to switch between header and source files.
+augroup cppfiles
+  au!
+  " Switch from header files to source files.
+  " Cases handled:
+  "   file.h            -> file.cpp
+  "   include/**/file.h -> file.cpp
+  "   include/**/file.h -> src/**/file.cpp
+  au BufEnter *.h let b:fswitchdst = 'cpp,c'
+  au BufEnter *.h let b:fswitchlocs = 'reg:/include.*//,reg:/include.*/src\*\*/'
+
+  " Switch from source files to header files.
+  " Cases handled:
+  "   file.cpp        -> file.h
+  "   file.cpp        -> include/**/file.cpp
+  "   src/**/file.cpp -> include/**/file.h
+  au BufEnter *.cpp let b:fswitchdst = 'h,hpp'
+  au BufEnter *.cpp let b:fswitchlocs = 'include/**,reg:/src.*/include\*\*/'
+augroup END
 
 " ================================= Search =================================== "
 
@@ -181,6 +206,16 @@ noremap "p "0p
 
 " Make C-a page down like C-b, since C-b is used as the tmux prefix key.
 nnoremap <C-a> <C-b>
+
+" Cscope mappings.
+nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <unique> <C-S>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <unique> <C-S>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " ============================= Auto Commands ================================ "
 
