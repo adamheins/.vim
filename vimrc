@@ -87,6 +87,27 @@ call gitgutter#disable()
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
+" FSwitch
+" Define search paths to switch between header and source files.
+augroup nlcppfiles
+  au!
+  " Switch from header files to source files.
+  " Cases handled:
+  "   file.h            -> file.cpp
+  "   include/**/file.h -> file.cpp
+  "   include/**/file.h -> src/**/file.cpp
+  au BufEnter *.h let b:fswitchdst = 'cpp,c'
+  au BufEnter *.h let b:fswitchlocs = 'reg:/include.*//,reg:/include.*/src\*\*/'
+
+  " Switch from source files to header files.
+  " Cases handled:
+  "   file.cpp        -> file.h
+  "   file.cpp        -> include/**/file.cpp
+  "   src/**/file.cpp -> include/**/file.h
+  au BufEnter *.cpp let b:fswitchdst = 'h,hpp'
+  au BufEnter *.cpp let b:fswitchlocs = 'include/**,reg:/src.*/include\*\*/'
+augroup END
+
 " ================================= Search =================================== "
 
 set hlsearch
@@ -124,6 +145,10 @@ set undofile
 " Sometimes I still have shift pressed when I type these.
 command! Q q
 command! W w
+
+" A simple command for calling FSwitch to switch between source and header
+" files.
+command! FS call FSwitch('%', '')
 
 " ================================ Mappings ================================== "
 

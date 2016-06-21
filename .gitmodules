@@ -34,9 +34,6 @@
 [submodule "bundle/adam-util"]
 	path = bundle/adam-util
 	url = git@github.com:adamheins/vim-adam-util.git
-[submodule "bundle/a"]
-	path = bundle/a
-	url = git@github.com:vim-scripts/a.vim.git
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
@@ -64,3 +61,6 @@
 [submodule "bundle/deoplete"]
 	path = bundle/deoplete
 	url = git@github.com:Shougo/deoplete.nvim
+[submodule "bundle/fswitch"]
+	path = bundle/fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git

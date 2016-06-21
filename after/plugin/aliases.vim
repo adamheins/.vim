@@ -1,1 +1,0 @@
-/home/adam/.dotfiles/files/.vim/aliases.vim

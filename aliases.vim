@@ -31,5 +31,8 @@ call CmdAlias('csi', 'cs find i')
 call CmdAlias('css', 'cs find s')
 call CmdAlias('cst', 'cs find t')
 
+" FSwitch
+call CmdAlias('fs', 'FS')
+
 " Spell check
 call CmdAlias('spc', 'setlocal spell! spelllang=en')
