@@ -58,6 +58,9 @@ set completeopt-=preview
 " Reduce updatetime to something more reasonable. Makes gitgutter more usable.
 set updatetime=750
 
+" Use cscope rather than ctags.
+set cst
+
 " ================================ Plugins =================================== "
 
 " Pathogen plugin manager.
@@ -83,6 +86,12 @@ autocmd! BufWritePost * Neomake
 
 " Easymotion
 nmap f <Plug>(easymotion-bd-f)
+
+" Ctrl-p
+let g:ctrlp_root_markers = ['cscope.files']
+let g:ctrlp_user_command = ['cscope.files', 'cat %s/cscope.files']
+let g:ctrlp_extensions = ['tag']
+let g:ctrlp_regexp = 1
 
 " FSwitch
 " Define search paths to switch between header and source files.

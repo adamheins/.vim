@@ -61,3 +61,6 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = git@github.com:easymotion/vim-easymotion
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim
