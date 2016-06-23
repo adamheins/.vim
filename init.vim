@@ -1,4 +1,4 @@
-" Run time configuration for vim.
+" Run time configuration for neovim.
 " Adam Heins
 
 " ================================ General =================================== "
@@ -43,7 +43,7 @@ set cmdheight=2
 set number
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=0
 
 " Hide the mode status messages, since mode is shown in status line.
 set noshowmode
@@ -82,6 +82,7 @@ let g:gitgutter_realtime = 1
 call gitgutter#disable()
 
 " Neomake
+let g:neomake_verbose = 0
 autocmd! BufWritePost * Neomake
 
 " Easymotion
@@ -136,7 +137,7 @@ colorscheme lucid
 
 set cursorline
 
-let &colorcolumn=101
+let &colorcolumn=81
 
 " ============================ Persistent Undo =============================== "
 
@@ -151,6 +152,10 @@ set undofile
 " Sometimes I still have shift pressed when I type these.
 command! Q q
 command! W w
+
+" A simple command for calling FSwitch to switch between source and header
+" files.
+command! FS call FSwitch('%', '')
 
 " ================================ Mappings ================================== "
 

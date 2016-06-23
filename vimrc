@@ -1,4 +1,6 @@
 " Run time configuration for vim.
+" NOTE: This file is deprecated in favour of init.vim, because of a switch to
+" neovim.
 " Adam Heins
 
 " ================================ General =================================== "
