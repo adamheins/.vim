@@ -1,6 +1,3 @@
-[submodule "bundle/neocomplete"]
-	path = bundle/neocomplete
-	url = git@github.com:Shougo/neocomplete.vim.git
 [submodule "bundle/rust"]
 	path = bundle/rust
 	url = git@github.com:rust-lang/rust.vim.git
