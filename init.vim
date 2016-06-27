@@ -56,7 +56,7 @@ let c_no_curly_error=1
 set completeopt-=preview
 
 " Reduce updatetime to something more reasonable. Makes gitgutter more usable.
-set updatetime=750
+set updatetime=250
 
 " Use cscope rather than ctags.
 set cst
@@ -87,6 +87,7 @@ autocmd! BufWritePost * Neomake
 
 " Easymotion
 nmap f <Plug>(easymotion-bd-f)
+vmap f <Plug>(easymotion-bd-f)
 
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']
