@@ -61,3 +61,9 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim
+[submodule "bundle/fastfold"]
+	path = bundle/fastfold
+	url = git@github.com:Konfekt/FastFold.git
+[submodule "bundle/neoinclude"]
+	path = bundle/neoinclude
+	url = git@github.com:Shougo/neoinclude.vim
