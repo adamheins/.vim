@@ -85,6 +85,30 @@ call gitgutter#disable()
 let g:neomake_verbose = 0
 autocmd! BufWritePost * Neomake
 
+let g:neomake_error_sign = {
+  \ 'text': 'E',
+  \ 'texthl': 'NeomakeErrorSign',
+  \ }
+let g:neomake_warning_sign = {
+  \ 'text': 'W',
+  \ 'texthl': 'NeomakeWarningSign',
+  \ }
+let g:neomake_message_sign = {
+  \ 'text': 'M',
+  \ 'texthl': 'NeomakeMessageSign',
+  \ }
+let g:neomake_info_sign = {
+  \ 'text': 'I',
+  \ 'texthl': 'NeomakeInfoSign',
+  \ }
+augroup neomake_signs
+  au!
+  au ColorScheme * hi NeomakeErrorSign   ctermfg=red
+  au ColorScheme * hi NeomakeWarningSign ctermfg=yellow
+  au ColorScheme * hi NeomakeMessageSign ctermfg=white
+  au ColorScheme * hi NeomakeInfoSign    ctermfg=blue
+augroup END
+
 " Easymotion
 nmap f <Plug>(easymotion-bd-f)
 vmap f <Plug>(easymotion-bd-f)
