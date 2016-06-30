@@ -19,6 +19,10 @@ Alias gt GitGutterToggle
 Alias gb Gblame
 Alias gd Gdiff
 
+" Neomake
+Alias nm Neomake
+Alias nt NeomakeToggle
+
 " Cscope
 call CmdAlias('csc', 'cs find c')
 call CmdAlias('cse', 'cs find e')

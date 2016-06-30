@@ -83,6 +83,7 @@ call gitgutter#disable()
 
 " Neomake
 let g:neomake_verbose = 0
+let g:neomake_place_signs = 0
 autocmd! BufWritePost * Neomake
 
 let g:neomake_error_sign = {
@@ -109,9 +110,26 @@ augroup neomake_signs
   au ColorScheme * hi NeomakeInfoSign    ctermfg=blue
 augroup END
 
+" Toggle the neomake messages appearing in the gutter.
+function NeomakeToggle()
+  if g:neomake_place_signs == 1
+    let g:neomake_place_signs = 0
+  else
+    let g:neomake_place_signs = 1
+  endif
+  Neomake
+endfunction
+
+command! NeomakeToggle call NeomakeToggle()
+
 " Easymotion
-nmap f <Plug>(easymotion-bd-f)
-vmap f <Plug>(easymotion-bd-f)
+let g:EasyMotion_do_mapping = 0
+
+nmap f <Plug>(easymotion-f)
+vmap f <Plug>(easymotion-f)
+
+nmap F <Plug>(easymotion-F)
+vmap F <Plug>(easymotion-F)
 
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']
