@@ -125,12 +125,6 @@ command! NeomakeToggle call NeomakeToggle()
 " Easymotion
 let g:EasyMotion_do_mapping = 0
 
-nmap f <Plug>(easymotion-f)
-vmap f <Plug>(easymotion-f)
-
-nmap F <Plug>(easymotion-F)
-vmap F <Plug>(easymotion-F)
-
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']
 let g:ctrlp_user_command = ['cscope.files', 'cat %s/cscope.files']
@@ -226,12 +220,18 @@ nnoremap gk O<Esc>
 nnoremap gJ J
 nnoremap gK K
 
-" Move up/down regardless of case.
-nnoremap J j
-nnoremap K k
+" Easymotion mappings.
+nmap f <Plug>(easymotion-f)
+vmap f <Plug>(easymotion-f)
+nmap F <Plug>(easymotion-F)
+vmap F <Plug>(easymotion-F)
 
-" Make escape stop highlighting searches. The call to `redraw!' clears the vim
-" status area.
+nmap J <Plug>(easymotion-j)
+vmap J <Plug>(easymotion-j)
+nmap K <Plug>(easymotion-k)
+vmap K <Plug>(easymotion-k)
+
+" Make escape stop highlighting searches and clear the vim status area.
 nnoremap <Esc> :noh<CR>:redraw!<CR><Esc>
 
 " Make switching between splits easier.
