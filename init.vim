@@ -202,7 +202,7 @@ let mapleader = ","
 " Map Y to yank until EOL.
 map Y y$
 
-" Map h,k to include wrapped lines.
+" Map j,k to include wrapped lines.
 noremap j gj
 noremap k gk
 
@@ -221,15 +221,20 @@ nnoremap gJ J
 nnoremap gK K
 
 " Easymotion mappings.
-nmap f <Plug>(easymotion-f)
-vmap f <Plug>(easymotion-f)
-nmap F <Plug>(easymotion-F)
-vmap F <Plug>(easymotion-F)
+nmap f <Plug>(easymotion-fl)
+vmap f <Plug>(easymotion-fl)
+nmap F <Plug>(easymotion-Fl)
+vmap F <Plug>(easymotion-Fl)
 
 nmap J <Plug>(easymotion-j)
 vmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 vmap K <Plug>(easymotion-k)
+
+" nmap w <Plug>(easymotion-wl)
+" vmap w <Plug>(easymotion-wl)
+" nmap b <Plug>(easymotion-bl)
+" vmap b <Plug>(easymotion-bl)
 
 " Make escape stop highlighting searches and clear the vim status area.
 nnoremap <Esc> :noh<CR>:redraw!<CR><Esc>
@@ -263,6 +268,9 @@ noremap "p "0p
 
 " Make C-a page down like C-b, since C-b is used as the tmux prefix key.
 nnoremap <C-a> <C-b>
+
+" Don't overwrite the p buffer when pasting over something.
+xnoremap p pgvy
 
 " Cscope mappings.
 nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
