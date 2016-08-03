@@ -250,7 +250,8 @@ nnoremap <leader><C-J> :split<CR><C-W><C-J>
 nnoremap <leader><C-K> :split<CR>
 nnoremap <leader><C-H> :vsplit<CR>
 nnoremap <leader><C-L> :vsplit<CR><C-W><C-L>
-nnoremap <leader>, :bNext<CR>
+nnoremap <leader>. :bNext<CR>
+nnoremap <leader>, :b#<CR>
 nnoremap <leader>m :enew<CR>
 
 " CtrlP buffer search.
