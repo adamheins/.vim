@@ -61,6 +61,9 @@ set updatetime=250
 " Use cscope rather than ctags.
 set cst
 
+" Don't insert a double space when wrapping sentences.
+set nojoinspaces
+
 " ================================ Plugins =================================== "
 
 " Pathogen plugin manager.
