@@ -67,3 +67,6 @@
 [submodule "bundle/neoinclude"]
 	path = bundle/neoinclude
 	url = git@github.com:Shougo/neoinclude.vim
+[submodule "bundle/nginx"]
+	path = bundle/nginx
+	url = git@github.com:LeonB/vim-nginx.git
