@@ -67,3 +67,9 @@
 [submodule "bundle/neoinclude"]
 	path = bundle/neoinclude
 	url = git@github.com:Shougo/neoinclude.vim
+[submodule "bundle/matlab"]
+	path = bundle/matlab
+	url = git@github.com:daeyun/vim-matlab.git
+[submodule "bundle/html5"]
+	path = bundle/html5
+	url = git@github.com:othree/html5.vim.git
