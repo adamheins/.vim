@@ -238,7 +238,7 @@ vmap K <Plug>(easymotion-k)
 " * Unhighlight searches
 " * Unhighlight misspelled words
 " * Clear the vim status area
-nnoremap <Esc> :noh<CR>:set nospell<CR>:redraw!<CR><Esc>
+nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:redraw!<CR><Esc>
 
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>
