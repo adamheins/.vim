@@ -37,4 +37,4 @@ call CmdAlias('cst', 'cs find t')
 call CmdAlias('fs', 'FS')
 
 " Spell check
-call CmdAlias('spc', 'setlocal spell! spelllang=en')
+call CmdAlias('spc', 'setlocal spell! spelllang=en_ca')

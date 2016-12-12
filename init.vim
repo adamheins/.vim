@@ -234,13 +234,11 @@ vmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 vmap K <Plug>(easymotion-k)
 
-" nmap w <Plug>(easymotion-wl)
-" vmap w <Plug>(easymotion-wl)
-" nmap b <Plug>(easymotion-bl)
-" vmap b <Plug>(easymotion-bl)
-
-" Make escape stop highlighting searches and clear the vim status area.
-nnoremap <Esc> :noh<CR>:redraw!<CR><Esc>
+" Escape does a number of convenience things now:
+" * Unhighlight searches
+" * Unhighlight misspelled words
+" * Clear the vim status area
+nnoremap <Esc> :noh<CR>:set nospell<CR>:redraw!<CR><Esc>
 
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>
