@@ -15,8 +15,8 @@ highlight Character      ctermfg=150               cterm=NONE
 highlight Number         ctermfg=116               cterm=NONE
 highlight Boolean        ctermfg=116               cterm=NONE
 highlight Float          ctermfg=116               cterm=NONE
-highlight Identifier     ctermfg=216               cterm=NONE
-highlight Function       ctermfg=216               cterm=NONE
+highlight Identifier     ctermfg=218               cterm=NONE
+highlight Function       ctermfg=218               cterm=NONE
 highlight Statement      ctermfg=110               cterm=NONE
 highlight Conditional    ctermfg=110               cterm=NONE
 highlight Exception      ctermfg=110               cterm=NONE
@@ -36,7 +36,7 @@ highlight Typedef        ctermfg=115               cterm=NONE
 highlight Special        ctermfg=181               cterm=NONE
 highlight SpecialChar    ctermfg=181               cterm=NONE
 highlight Tag            ctermfg=181               cterm=NONE
-highlight Delimiter      ctermfg=181               cterm=NONE
+highlight Delimiter      ctermfg=117               cterm=NONE
 highlight SpecialComment ctermfg=181               cterm=NONE
 highlight Debug          ctermfg=181  ctermbg=NONE cterm=NONE
 highlight Underlined     ctermfg=fg                cterm=underline
@@ -49,22 +49,22 @@ highlight SpellRare                   ctermbg=13   cterm=undercurl
 highlight SpellLocal                  ctermbg=14   cterm=undercurl
 highlight Cursor         ctermfg=bg   ctermbg=153
 highlight CursorIM       ctermfg=bg   ctermbg=116
-highlight CursorColumn   ctermfg=NONE ctermbg=16  cterm=NONE
+highlight CursorColumn   ctermfg=NONE ctermbg=16   cterm=NONE
 highlight CursorLine     ctermfg=NONE ctermbg=236  cterm=NONE
 highlight ColorColumn                 ctermbg=234
 highlight Directory      ctermfg=151               cterm=NONE
 highlight ErrorMsg       ctermfg=196  ctermbg=NONE cterm=NONE
-highlight VertSplit      ctermfg=242  ctermbg=16  cterm=NONE
-highlight SignColumn     ctermfg=145  ctermbg=16  cterm=NONE
+highlight VertSplit      ctermfg=242  ctermbg=16   cterm=NONE
+highlight SignColumn     ctermfg=145  ctermbg=16   cterm=NONE
 highlight LineNr         ctermfg=238  ctermbg=16
 highlight CursorLineNr   ctermfg=239  ctermbg=16
 highlight MatchParen     ctermfg=77   ctermbg=NONE cterm=NONE
 highlight MoreMsg        ctermfg=29                cterm=NONE
 highlight ModeMsg        ctermfg=117  ctermbg=NONE cterm=NONE
-highlight NonText        ctermfg=239  ctermbg=16  cterm=NONE
+highlight NonText        ctermfg=239  ctermbg=16   cterm=NONE
 highlight Question       ctermfg=fg                cterm=NONE
 highlight SpecialKey     ctermfg=239
-highlight Title          ctermfg=74                cterm=NONE
+highlight Title          ctermfg=110               cterm=NONE
 highlight WarningMsg     ctermfg=173               cterm=NONE
 highlight WildMenu       ctermfg=16   ctermbg=186  cterm=bold
 highlight DiffAdd        ctermfg=108  ctermbg=22   cterm=NONE
@@ -79,7 +79,7 @@ highlight Pmenu          ctermfg=253  ctermbg=238  cterm=NONE
 highlight PmenuSel       ctermfg=186  ctermbg=238  cterm=NONE
 highlight PMenuSbar                   ctermbg=59   cterm=NONE
 highlight PMenuThumb                  ctermbg=102  cterm=NONE
-highlight StatusLine     ctermfg=254  ctermbg=234  cterm=bold
+highlight StatusLine     ctermfg=254  ctermbg=234  cterm=NONE
 highlight StatusLineNC   ctermfg=244  ctermbg=237  cterm=NONE
 highlight TabLine        ctermfg=244  ctermbg=236  cterm=NONE
 highlight TabLineFill    ctermfg=187  ctermbg=236  cterm=NONE
