@@ -38,3 +38,6 @@ call CmdAlias('fs', 'FS')
 
 " Spell check
 call CmdAlias('spc', 'call SpcToggle()')
+
+" JSON formatting.
+call CmdAlias('json', '%!python -m json.tool')
