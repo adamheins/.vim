@@ -66,9 +66,39 @@ set nojoinspaces
 
 " ================================ Plugins =================================== "
 
-" Pathogen plugin manager.
-execute pathogen#infect()
-Helptags
+" Plug plugin manager.
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/taketwo/vim-ros'
+Plug 'https://github.com/ujihisa/neco-look'
+Plug 'https://github.com/tpope/vim-abolish'
+Plug 'https://github.com/adamheins/vim-adam-util'
+Plug 'https://github.com/ntpeters/vim-better-whitespace'
+Plug 'https://github.com/vim-scripts/cmdalias.vim'
+Plug 'https://github.com/adamheins/vim-col'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/Konfekt/FastFold'
+Plug 'https://github.com/derekwyatt/vim-fswitch'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/othree/html5.vim'
+Plug 'https://github.com/adamheins/vim-indexed-search'
+Plug 'https://github.com/digitaltoad/vim-jade'
+Plug 'https://github.com/daeyun/vim-matlab'
+Plug 'https://github.com/ujihisa/neco-look'
+Plug 'https://github.com/Shougo/neoinclude.vim'
+Plug 'https://github.com/neomake/neomake'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/rust-lang/rust.vim'
+Plug 'https://github.com/adamheins/vim-simple-status'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tomtom/tcomment_vim'
+
+call plug#end()
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

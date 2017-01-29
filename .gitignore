@@ -3,3 +3,4 @@ undo
 *.swp
 .init.vim-rplugin~
 after/plugin/aliases.vim
+plugged
