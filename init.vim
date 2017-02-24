@@ -69,7 +69,6 @@ set nojoinspaces
 " Plug plugin manager.
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/taketwo/vim-ros'
 Plug 'https://github.com/ujihisa/neco-look'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/adamheins/vim-adam-util'
