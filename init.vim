@@ -14,6 +14,12 @@ set hidden
 " Show partial commands in the last line of the screen
 set showcmd
 
+" Visual autocomplete for commands.
+set wildmenu
+
+" Only redraw when needed.
+set lazyredraw
+
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
@@ -96,6 +102,7 @@ Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
+Plug 'https://github.com/simnalamburt/vim-mundo'
 
 call plug#end()
 
@@ -183,6 +190,7 @@ augroup cppfiles
   au BufEnter *.cpp let b:fswitchdst = 'h,hpp'
   au BufEnter *.cpp let b:fswitchlocs = 'include/**,reg:/src.*/include\*\*/'
 augroup END
+
 
 " ================================= Search =================================== "
 
@@ -289,6 +297,9 @@ noremap <leader>b :CtrlPBuffer<CR>
 
 " Toggle NERDTree.
 noremap <leader>n :NERDTreeFind<CR>
+
+" Use Mundo as a 'super undo'
+nnoremap <leader>u :MundoToggle<CR>
 
 " Make interaction with the system clipboard easier.
 noremap "" "+p
