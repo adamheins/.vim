@@ -90,7 +90,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/othree/html5.vim'
 Plug 'https://github.com/adamheins/vim-indexed-search'
-Plug 'https://github.com/digitaltoad/vim-jade'
+Plug 'https://github.com/digitaltoad/vim-pug'
 Plug 'https://github.com/daeyun/vim-matlab'
 Plug 'https://github.com/ujihisa/neco-look'
 Plug 'https://github.com/Shougo/neoinclude.vim'
@@ -103,6 +103,7 @@ Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
+Plug 'https://github.com/evanmiller/nginx-vim-syntax'
 
 call plug#end()
 
