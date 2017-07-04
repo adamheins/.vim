@@ -66,12 +66,41 @@ set updatetime=750
 
 " ================================ Plugins =================================== "
 
-" Note that this area if meant for plugin options and initialization.
-" Plugin-related mappings can be found in the Mappings section.
+" Plug plugin manager.
+call plug#begin('~/.vim/plugged')
 
-" Pathogen plugin manager.
-execute pathogen#infect()
-Helptags
+Plug 'https://github.com/tpope/vim-abolish'
+Plug 'https://github.com/adamheins/vim-adam-util'
+Plug 'https://github.com/ntpeters/vim-better-whitespace'
+Plug 'https://github.com/vim-scripts/cmdalias.vim'
+Plug 'https://github.com/adamheins/vim-col'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/Konfekt/FastFold'
+Plug 'https://github.com/derekwyatt/vim-fswitch'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/adamheins/vim-indexed-search'
+Plug 'https://github.com/Shougo/neoinclude.vim'
+Plug 'https://github.com/neomake/neomake'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/adamheins/vim-simple-status'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tomtom/tcomment_vim'
+Plug 'https://github.com/simnalamburt/vim-mundo'
+
+"" Language/domain-specific plugins.
+Plug 'https://github.com/othree/html5.vim'
+Plug 'https://github.com/daeyun/vim-matlab'
+Plug 'https://github.com/digitaltoad/vim-pug'
+Plug 'https://github.com/rust-lang/rust.vim'
+Plug 'https://github.com/mrk21/yaml-vim'
+Plug 'https://github.com/ElmCast/elm-vim'
+Plug 'https://github.com/evanmiller/nginx-vim-syntax'
+
+call plug#end()
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
