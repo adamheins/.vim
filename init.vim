@@ -308,8 +308,14 @@ noremap <leader>n :NERDTreeFind<CR>
 nnoremap <leader>u :MundoToggle<CR>
 
 " Make interaction with the system clipboard easier.
+" Paste from system clipboard.
 noremap "" "+p
+
+" Copy to system clipboard.
 vnoremap "' "+y
+
+" Cut to system clipboard.
+vnoremap "d "+d
 
 " Paste from the yank register more quickly.
 noremap "p "0p
@@ -318,7 +324,13 @@ noremap "p "0p
 nnoremap <C-a> <C-b>
 
 " Don't overwrite the p buffer when pasting over something.
+" This is useful when you copy something and want to paste it in more than one
+" place.
 xnoremap p pgvy
+
+" Make it easier to get to the end of the line.
+nnoremap Q $
+vnoremap Q $
 
 " Cscope mappings.
 nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
