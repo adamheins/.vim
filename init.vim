@@ -70,6 +70,9 @@ set cst
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
 
+" Don't use swap files.
+set noswapfile
+
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
 
