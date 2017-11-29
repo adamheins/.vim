@@ -339,6 +339,9 @@ xnoremap p pgvy
 nnoremap Q $
 vnoremap Q $
 
+" tComment makes gc comment out code. I accidentally hit cg too often.
+vmap cg gc
+
 " Cscope mappings.
 nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <unique> <C-S>g :cs find g <C-R>=expand("<cword>")<CR><CR>
