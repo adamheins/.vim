@@ -14,6 +14,10 @@ set hidden
 " Show partial commands in the last line of the screen
 set showcmd
 
+" This must be set to avoid a bug causing garbage characters to appear after
+" the cursor.
+set guicursor=
+
 " Visual autocomplete for commands.
 set wildmenu
 
