@@ -16,7 +16,7 @@ set showcmd
 
 " This must be set to avoid a bug causing garbage characters to appear after
 " the cursor.
-set guicursor=
+" set guicursor=
 
 " Visual autocomplete for commands.
 set wildmenu
@@ -76,6 +76,10 @@ set nojoinspaces
 
 " Don't use swap files.
 set noswapfile
+
+" Don't start with things folded.
+set foldlevelstart=20
+set fillchars="fold:' '"
 
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
