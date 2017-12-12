@@ -119,7 +119,7 @@ Plug 'https://github.com/digitaltoad/vim-pug'
 Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/mrk21/yaml-vim'
 Plug 'https://github.com/ElmCast/elm-vim'
-Plug 'https://github.com/evanmiller/nginx-vim-syntax'
+Plug 'https://github.com/chr4/nginx.vim'
 
 call plug#end()
 
