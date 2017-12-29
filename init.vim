@@ -291,8 +291,9 @@ vmap K <Plug>(easymotion-k)
 " Escape does a number of convenience things now:
 " * Unhighlight searches
 " * Unhighlight misspelled words
+" * Turn off cursorcolumn (only on when searching)
 " * Clear the vim status area
-nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:redraw!<CR><Esc>
+nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:redraw!<CR><Esc>
 
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>

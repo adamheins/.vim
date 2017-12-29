@@ -41,7 +41,7 @@ highlight SpecialComment ctermfg=181               cterm=NONE
 highlight Debug          ctermfg=181  ctermbg=NONE cterm=NONE
 highlight Underlined     ctermfg=fg                cterm=underline
 highlight Ignore         ctermfg=bg
-highlight Error          ctermfg=167  ctermbg=52   cterm=NONE
+highlight Error          ctermfg=255  ctermbg=196   cterm=NONE
 highlight Todo           ctermfg=229  ctermbg=NONE cterm=underline
 highlight SpellBad                    ctermbg=9    cterm=undercurl
 highlight SpellCap                    ctermbg=12   cterm=undercurl
@@ -49,7 +49,7 @@ highlight SpellRare                   ctermbg=13   cterm=undercurl
 highlight SpellLocal                  ctermbg=14   cterm=undercurl
 highlight Cursor         ctermfg=bg   ctermbg=153
 highlight CursorIM       ctermfg=bg   ctermbg=116
-highlight CursorColumn   ctermfg=NONE ctermbg=16   cterm=NONE
+highlight CursorColumn   ctermfg=NONE ctermbg=236   cterm=NONE
 highlight CursorLine     ctermfg=NONE ctermbg=236  cterm=NONE
 highlight ColorColumn                 ctermbg=234
 highlight Directory      ctermfg=151               cterm=NONE
