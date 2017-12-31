@@ -1,9 +1,11 @@
+" Simple markdown fold functionality.
+
 if exists("b:loaded_md_ftplugin")
   finish
 endif
 let b:loaded_md_ftplugin = 1
 
-function MarkdownFoldExpr()
+function! MarkdownFoldExpr()
   let l0 = getline(v:lnum)
   let l1 = getline(v:lnum + 1)
 
@@ -21,7 +23,7 @@ function MarkdownFoldExpr()
   endif
 endfunction
 
-function MarkdownFoldText()
+function! MarkdownFoldText()
   let linetext = getline(v:foldstart)
   let length = v:foldend - v:foldstart + 1
   return linetext . ' (' . length . ' lines)'
