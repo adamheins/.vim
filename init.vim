@@ -197,15 +197,20 @@ augroup cppfiles
   "   include/**/file.h -> file.cpp
   "   include/**/file.h -> src/**/file.cpp
   au BufEnter *.h let b:fswitchdst = 'cpp,c'
-  au BufEnter *.h let b:fswitchlocs = 'reg:/include.*//,reg:/include.*/src\*\*/'
+  au BufEnter *.h let b:fswitchlocs = 'reg:|include.*||,reg:|include.*|src/**|'
 
   " Switch from source files to header files.
   " Cases handled:
-  "   file.cpp        -> file.h
-  "   file.cpp        -> include/**/file.cpp
-  "   src/**/file.cpp -> include/**/file.h
+  "   file.cpp     -> file.h
+  "   file.cpp     -> include/**/file.h
+  "   src/file.cpp -> include/**/file.h
+  "
+  " Explanation of \v(src)(.*src)@!:
+  "   \v: Very magic
+  "   (src): Match the substring 'src'
+  "   (.*src)@!: Negative lookahead; don't match if followed by 'src'.
   au BufEnter *.cpp let b:fswitchdst = 'h,hpp'
-  au BufEnter *.cpp let b:fswitchlocs = 'include/**,reg:/src.*/include\*\*/'
+  au BufEnter *.cpp let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
 augroup END
 
 
