@@ -188,6 +188,9 @@ let g:ctrlp_extensions = ['tag']
 let g:ctrlp_regexp = 1
 
 " FSwitch
+" Don't create the corresponding file if it doesn't exist.
+let g:fsnonewfiles = 1
+
 " Define search paths to switch between header and source files.
 augroup cppfiles
   au!
@@ -196,8 +199,14 @@ augroup cppfiles
   "   file.h            -> file.cpp
   "   include/**/file.h -> file.cpp
   "   include/**/file.h -> src/**/file.cpp
-  au BufEnter *.h let b:fswitchdst = 'cpp,c'
+  au BufEnter *.h let b:fswitchdst = 'c,cpp,cc'
   au BufEnter *.h let b:fswitchlocs = 'reg:|include.*||,reg:|include.*|src/**|'
+
+  au BufEnter *.hpp let b:fswitchdst = 'cpp,cc'
+  au BufEnter *.hpp let b:fswitchlocs = 'reg:|include.*||,reg:|include.*|src/**|'
+
+  au BufEnter *.hh let b:fswitchdst = 'cc,cpp'
+  au BufEnter *.hh let b:fswitchlocs = 'reg:|include.*||,reg:|include.*|src/**|'
 
   " Switch from source files to header files.
   " Cases handled:
@@ -209,8 +218,14 @@ augroup cppfiles
   "   \v: Very magic
   "   (src): Match the substring 'src'
   "   (.*src)@!: Negative lookahead; don't match if followed by 'src'.
-  au BufEnter *.cpp let b:fswitchdst = 'h,hpp'
+  au BufEnter *.c let b:fswitchdst = 'h'
+  au BufEnter *.c let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
+
+  au BufEnter *.cpp let b:fswitchdst = 'hpp,hh,h'
   au BufEnter *.cpp let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
+
+  au BufEnter *.cc let b:fswitchdst = 'hh,hpp,h'
+  au BufEnter *.cc let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
 augroup END
 
 
