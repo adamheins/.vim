@@ -74,8 +74,8 @@ set cst
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
 
-" Don't use swap files.
-set noswapfile
+" Save swap files in a centralized place to avoid clutter.
+set directory=~/.vim/swap//
 
 " Don't start with things folded.
 set foldlevelstart=20
@@ -83,6 +83,9 @@ set fillchars="fold:' '"
 
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
+
+" let g:python_host_prog = '/home/linuxbrew/.linuxbrew/bin/python'
+" let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
 
 " ================================ Plugins =================================== "
 
@@ -111,6 +114,7 @@ Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
+Plug 'https://github.com/rhysd/vim-grammarous'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -122,6 +126,9 @@ Plug 'https://github.com/ElmCast/elm-vim'
 Plug 'https://github.com/chr4/nginx.vim'
 
 call plug#end()
+
+" Grammarous
+let g:grammarous#enable_spell_check = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
