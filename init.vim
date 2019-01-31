@@ -77,6 +77,10 @@ set nojoinspaces
 " Save swap files in a centralized place to avoid clutter.
 set directory=~/.vim/swap//
 
+" Enable backup files.
+set backupdir=~/.vim/backup//
+set backup
+
 " Don't start with things folded.
 set foldlevelstart=20
 set fillchars="fold:' '"
@@ -262,6 +266,7 @@ let &colorcolumn=81
 
 " ============================ Persistent Undo =============================== "
 
+" Create undo directory if it doesn't exist.
 if has('persistent_undo') && !isdirectory(expand('~').'/.vim/undo')
   silent !mkdir ~/.vim/undo > /dev/null 2>&1
 endif
