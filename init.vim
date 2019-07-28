@@ -74,12 +74,16 @@ set cst
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
 
-" Save swap files in a centralized place to avoid clutter.
+" Swapfiles on and saved to a single place.
+set swapfile
 set directory=~/.vim/swap//
 
-" Enable backup files.
+" Protect against crash-during-write but don't keep the backup after
+" successful write.
+set writebackup
+set nobackup
+set backupcopy=auto
 set backupdir=~/.vim/backup//
-set backup
 
 " Don't start with things folded.
 set foldlevelstart=20
@@ -270,7 +274,7 @@ let &colorcolumn=81
 if has('persistent_undo') && !isdirectory(expand('~').'/.vim/undo')
   silent !mkdir ~/.vim/undo > /dev/null 2>&1
 endif
-set undodir=~/.vim/undo
+set undodir=~/.vim/undo//
 set undofile
 
 " ================================ Commands ================================== "
