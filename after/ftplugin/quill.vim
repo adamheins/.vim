@@ -1,0 +1,1 @@
+/home/adam/dev/proj/quill/vim/after/ftplugin/quill.vim

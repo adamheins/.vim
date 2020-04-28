@@ -86,3 +86,9 @@ highlight TabLineFill    ctermfg=187  ctermbg=236  cterm=NONE
 highlight TabLineSel     ctermfg=254  ctermbg=236  cterm=bold
 highlight Visual         ctermfg=NONE ctermbg=24
 highlight VisualNOS      ctermfg=fg                cterm=underline
+highlight Bold                                     cterm=bold
+highlight Emphasis       ctermfg=225  ctermbg=NONE cterm=NONE
+
+" Quill stuff
+highlight TaskFailed     ctermfg=1                 cterm=NONE
+highlight TaskDone       ctermfg=245               cterm=NONE
