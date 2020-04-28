@@ -92,8 +92,9 @@ set fillchars="fold:' '"
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
 
+" Required for deoplete
 " let g:python_host_prog = '/home/linuxbrew/.linuxbrew/bin/python'
-" let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
+let g:python3_host_prog = '/home/adam/.pyenv/versions/3.7.1/bin/python3'
 
 " ================================ Plugins =================================== "
 
@@ -111,18 +112,18 @@ Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/Konfekt/FastFold'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
 Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/adamheins/vim-indexed-search'
 Plug 'https://github.com/Shougo/neoinclude.vim'
 Plug 'https://github.com/neomake/neomake'
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
-Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
+Plug 'vimwiki/vimwiki'
+Plug 'https://github.com/jeetsukumaran/vim-buffergator'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -132,6 +133,7 @@ Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/mrk21/yaml-vim'
 Plug 'https://github.com/ElmCast/elm-vim'
 Plug 'https://github.com/chr4/nginx.vim'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -147,10 +149,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
-
-" Gitgutter
-let g:gitgutter_realtime = 1
-call gitgutter#disable()
 
 " Neomake
 let g:neomake_verbose = 0
@@ -345,9 +343,6 @@ nnoremap <leader><C-L> :vsplit<CR><C-W><C-L>
 nnoremap <leader>. :bNext<CR>
 nnoremap <leader>, :b#<CR>
 nnoremap <leader>m :enew<CR>
-
-" CtrlP buffer search.
-noremap <leader>b :CtrlPBuffer<CR>
 
 " Toggle NERDTree.
 noremap <leader>n :NERDTreeFind<CR>
