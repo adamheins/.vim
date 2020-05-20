@@ -93,7 +93,6 @@ set fillchars="fold:' '"
 let g:netrw_browsex_viewer="xdg-open"
 
 " Required for deoplete
-" let g:python_host_prog = '/home/linuxbrew/.linuxbrew/bin/python'
 let g:python3_host_prog = '/home/adam/.pyenv/versions/3.7.1/bin/python3'
 
 " ================================ Plugins =================================== "
@@ -122,7 +121,6 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
-Plug 'vimwiki/vimwiki'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
 
 "" Language/domain-specific plugins.
@@ -131,7 +129,6 @@ Plug 'https://github.com/daeyun/vim-matlab'
 Plug 'https://github.com/digitaltoad/vim-pug'
 Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/mrk21/yaml-vim'
-Plug 'https://github.com/ElmCast/elm-vim'
 Plug 'https://github.com/chr4/nginx.vim'
 Plug 'lervag/vimtex'
 

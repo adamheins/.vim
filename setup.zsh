@@ -18,3 +18,5 @@ backup-and-link() {
 
 backup-and-link ~/.vim   "$vim_dir"
 backup-and-link ~/.vimrc "$vim_dir"/vimrc
+
+mkdir "$vim_dir"/backup
