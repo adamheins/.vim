@@ -122,6 +122,7 @@ Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
+Plug 'dominikduda/vim_current_word'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -238,6 +239,9 @@ augroup cppfiles
   au BufEnter *.cc let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
 augroup END
 
+" disable current word highlighting at the start
+let g:vim_current_word#enabled = 0
+let g:vim_current_word#highlight_twins = 0
 
 " ================================= Search =================================== "
 
@@ -323,8 +327,9 @@ vmap K <Plug>(easymotion-k)
 " * Unhighlight searches
 " * Unhighlight misspelled words
 " * Turn off cursorcolumn (only on when searching)
-" * Clear the vim status area
-nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:redraw!<CR><Esc>
+" * Clear matches
+" * Clear the status area
+nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:call clearmatches()<CR>:echo ""<CR><Esc>
 
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>
@@ -389,4 +394,19 @@ nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Get rid of the python omnifunc, because it can be really slow.
 au FileType python setlocal omnifunc=
+
+" Highlight the current search word under the cursor.
+" Problems:
+" * Currently ignores case via \c, which doesn't match one-to-one with smart
+"   search settings.
+" * Only matches when the cursor is at the start of the word.
+function! MatchCurrentSearchWord()
+  if v:hlsearch && expand('<cword>') =~ @/
+    execute 'match CurrentSearchWord /\%#\@<=' . @/ . '\c/'
+  else
+    call clearmatches()
+  endif
+endfunction
+
+autocmd CursorMoved * call MatchCurrentSearchWord()
 

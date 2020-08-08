@@ -73,7 +73,7 @@ highlight DiffDelete     ctermfg=59   ctermbg=58   cterm=NONE
 highlight DiffText       ctermfg=203  ctermbg=52   cterm=bold
 highlight Folded         ctermfg=117  ctermbg=238  cterm=NONE
 highlight FoldColumn     ctermfg=117  ctermbg=238  cterm=NONE
-highlight IncSearch      ctermfg=87                cterm=reverse
+highlight IncSearch                   ctermbg=88   cterm=NONE
 highlight Search                      ctermbg=81   cterm=NONE
 highlight Pmenu          ctermfg=253  ctermbg=238  cterm=NONE
 highlight PmenuSel       ctermfg=186  ctermbg=238  cterm=NONE
@@ -88,6 +88,8 @@ highlight Visual         ctermfg=NONE ctermbg=24
 highlight VisualNOS      ctermfg=fg                cterm=underline
 highlight Bold                                     cterm=bold
 highlight Emphasis       ctermfg=225  ctermbg=NONE cterm=NONE
+
+highlight CurrentSearchWord    ctermbg=88 cterm=NONE
 
 " Quill stuff
 highlight TaskFailed     ctermfg=1                 cterm=NONE
