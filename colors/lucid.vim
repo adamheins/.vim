@@ -89,8 +89,6 @@ highlight VisualNOS      ctermfg=fg                cterm=underline
 highlight Bold                                     cterm=bold
 highlight Emphasis       ctermfg=218  ctermbg=NONE cterm=NONE
 
-highlight CurrentSearchWord    ctermbg=88 cterm=NONE
-
 " Quill stuff
 highlight TaskFailed     ctermfg=1                 cterm=NONE
 highlight TaskDone       ctermfg=245               cterm=NONE

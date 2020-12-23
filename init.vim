@@ -390,33 +390,3 @@ nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Get rid of the python omnifunc, because it can be really slow.
 au FileType python setlocal omnifunc=
-
-" Highlight the current search word under the cursor.
-" Problems:
-" * Currently ignores case via \c, which doesn't match one-to-one with smart
-"   search settings.
-" * Only matches when the cursor is at the start of the word.
-" function! MatchCurrentSearchWord()
-"   if v:hlsearch && expand('<cword>') =~ @/
-"     execute 'match CurrentSearchWord /\%#\@<=' . @/ . '\c/'
-"   else
-"     call clearmatches()
-"   endif
-" endfunction
-
-let g:MatchCurrentSearchWord#match_id = -1
-
-function! MatchCurrentSearchWord()
-  if v:hlsearch && expand('<cword>') =~ @/
-    let l:pattern = join(['\%#\@<=', @/, '\c'], '')
-    call matchadd('CurrentSearchWord', l:pattern, 1, g:MatchCurrentSearchWord#match_id)
-  else
-    if g:MatchCurrentSearchWord#match_id > 0
-      call matchdelete(g:MatchCurrentSearchWord#match_id)
-      let g:MatchCurrentSearchWord#match_id = -1
-    endif
-  endif
-endfunction
-
-autocmd CursorMoved * call MatchCurrentSearchWord()
-
