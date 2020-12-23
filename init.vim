@@ -122,7 +122,7 @@ Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
-Plug 'dominikduda/vim_current_word'
+" Plug 'sheerun/vim-polyglot'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -238,10 +238,6 @@ augroup cppfiles
   au BufEnter *.cc let b:fswitchdst = 'hh,hpp,h'
   au BufEnter *.cc let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
 augroup END
-
-" disable current word highlighting at the start
-let g:vim_current_word#enabled = 0
-let g:vim_current_word#highlight_twins = 0
 
 " ================================= Search =================================== "
 

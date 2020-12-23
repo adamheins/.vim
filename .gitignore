@@ -5,3 +5,4 @@ swap
 .init.vim-rplugin~
 plugged
 quill.*
+spell/
