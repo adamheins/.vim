@@ -16,17 +16,26 @@ if !exists('g:MatchCurrentSearchWord#match_bg')
 endif
 
 function! MatchCurrentSearchWord()
-  " Compare value under the cursor (<cword>) and the value in the search
-  " register @/
-  if v:hlsearch && expand('<cword>') =~ @/
-    let l:pattern = join(['\%#\@<=', @/, '\c'], '')
-    call matchadd('CurrentSearchWord', l:pattern, 1, g:MatchCurrentSearchWord#match_id)
-  else
-    if g:MatchCurrentSearchWord#match_id > 0
-      call matchdelete(g:MatchCurrentSearchWord#match_id)
-      let g:MatchCurrentSearchWord#match_id = -1
-    endif
+  " Remove the old match, if it exists.
+  if g:MatchCurrentSearchWord#match_id > 0
+    call matchdelete(g:MatchCurrentSearchWord#match_id)
+    let g:MatchCurrentSearchWord#match_id = -1
   endif
+
+  " Don't do highlighting when highlight search is off.
+  if !v:hlsearch
+    return
+  endif
+
+  " \%#  : cursor position
+  " \@<= : positive look-behind
+  " \c   : case-insensitive search
+  let l:pattern = join(['\%#\@<=', @/, '\c'], '')
+
+  " Priority level 11 is chosen to be higher-priority than the default value
+  " of 10.
+  call matchadd('CurrentSearchWord', l:pattern, 11, g:MatchCurrentSearchWord#match_id)
+
 endfunction
 
 exe 'highlight CurrentSearchWord ctermbg=' . g:MatchCurrentSearchWord#match_bg . ' cterm=NONE'
