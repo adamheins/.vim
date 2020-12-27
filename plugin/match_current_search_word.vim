@@ -4,10 +4,10 @@
 "   search settings.
 " * Only matches when the cursor is at the start of the word.
 
-if exists('loaded_match_current_search_word')
+if exists('g:loaded_match_current_search_word')
   finish
 endif
-let loaded_match_current_search_word = 1
+let g:loaded_match_current_search_word = 1
 
 let g:MatchCurrentSearchWord#match_id = -1
 
@@ -15,10 +15,11 @@ if !exists('g:MatchCurrentSearchWord#match_bg')
   let g:MatchCurrentSearchWord#match_bg = 88
 endif
 
+" TODO I think this could just be done on every search? much more efficient
 function! MatchCurrentSearchWord()
   " Remove the old match, if it exists.
   if g:MatchCurrentSearchWord#match_id > 0
-    call matchdelete(g:MatchCurrentSearchWord#match_id)
+    silent! call matchdelete(g:MatchCurrentSearchWord#match_id)
     let g:MatchCurrentSearchWord#match_id = -1
   endif
 
@@ -30,12 +31,11 @@ function! MatchCurrentSearchWord()
   " \%#  : cursor position
   " \@<= : positive look-behind
   " \c   : case-insensitive search
-  let l:pattern = join(['\%#\@<=', @/, '\c'], '')
+  let l:pattern = '\%#\@<=' . @/ . '\c'
 
   " Priority level 11 is chosen to be higher-priority than the default value
   " of 10.
-  call matchadd('CurrentSearchWord', l:pattern, 11, g:MatchCurrentSearchWord#match_id)
-
+  let g:MatchCurrentSearchWord#match_id = matchadd('CurrentSearchWord', l:pattern, 11)
 endfunction
 
 exe 'highlight CurrentSearchWord ctermbg=' . g:MatchCurrentSearchWord#match_bg . ' cterm=NONE'
