@@ -1,8 +1,4 @@
 " Highlight the current search word under the cursor.
-" Problems:
-" * Currently ignores case via \c, which doesn't match one-to-one with smart
-"   search settings.
-" * Only matches when the cursor is at the start of the word.
 
 if exists('g:loaded_match_current_search_word')
   finish
@@ -15,7 +11,6 @@ if !exists('g:MatchCurrentSearchWord#match_bg')
   let g:MatchCurrentSearchWord#match_bg = 88
 endif
 
-" TODO I think this could just be done on every search? much more efficient
 function! MatchCurrentSearchWord()
   " Remove the old match, if it exists.
   if g:MatchCurrentSearchWord#match_id > 0
@@ -28,14 +23,32 @@ function! MatchCurrentSearchWord()
     return
   endif
 
-  " \%#  : cursor position
-  " \@<= : positive look-behind
-  " \c   : case-insensitive search
-  let l:pattern = '\%#\@<=' . @/ . '\c'
+  let l:match_len = strlen(@/)
+  let l:save_cursor = getcurpos()
+  let l:cursor_lnum = l:save_cursor[1]
+  let l:cursor_col = l:save_cursor[2]
 
-  " Priority level 11 is chosen to be higher-priority than the default value
-  " of 10.
-  let g:MatchCurrentSearchWord#match_id = matchadd('CurrentSearchWord', l:pattern, 11)
+  " Move the cursor to before a possible match to do the search
+  let l:cursor_col_before = max([l:cursor_col - l:match_len + 1, 1])
+  call cursor(l:cursor_lnum, l:cursor_col_before)
+
+  " Get the position of the match. Flags:
+  " c: accept a match at the cursor position
+  " n: don't move the cursor
+  let [l:match_lnum, l:match_col] = searchpos(@/, 'cn')
+
+  " Restore the cursor
+  call setpos('.', l:save_cursor)
+
+  " Only do the match if the cursor is actually over top of the search string.
+  if l:match_lnum ==# l:save_cursor[1]
+        \ && l:cursor_col >= l:match_col
+        \ && l:cursor_col < l:match_col + l:match_len
+    " Priority level 11 is chosen to be higher-priority than the default value
+    " of 10.
+    let g:MatchCurrentSearchWord#match_id = matchaddpos('CurrentSearchWord',
+          \ [[l:match_lnum, l:match_col, l:match_len]], 11)
+  endif
 endfunction
 
 exe 'highlight CurrentSearchWord ctermbg=' . g:MatchCurrentSearchWord#match_bg . ' cterm=NONE'
