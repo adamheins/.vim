@@ -101,7 +101,6 @@ let g:python3_host_prog = '/home/adam/.pyenv/versions/3.7.1/bin/python3'
 call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/tpope/vim-abolish'
-Plug 'https://github.com/adamheins/vim-adam-util'
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
 Plug 'https://github.com/vim-scripts/cmdalias.vim'
 Plug 'https://github.com/adamheins/vim-col'
@@ -122,7 +121,6 @@ Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
-" Plug 'sheerun/vim-polyglot'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -261,7 +259,7 @@ colorscheme lucid
 
 set cursorline
 
-let &colorcolumn=81
+let &colorcolumn=80
 
 " ============================ Persistent Undo =============================== "
 
