@@ -2,12 +2,12 @@
 
 vim_dir=${0:a:h}
 
-# Create a symlink at location $1 with source $2. Backup $1 if it already
-# exists.
+# Create a symlink at location $1 with source $2.
 backup-and-link() {
   [ -z "$2" ] && return 1
 
-  if [ -e "$1" ]; then
+  # Backup $1 if it already exists (including broken symlinks)
+  if [ -e "$1" ] || ([ -L "$1" ] && [ ! -e "$1" ]); then
     echo "Moved $1 -> $1.back"
     mv "$1" "$1".back
   fi
