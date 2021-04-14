@@ -69,7 +69,7 @@ set completeopt-=preview
 set updatetime=250
 
 " Use cscope rather than ctags.
-set cst
+set cscopetag
 
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
@@ -88,6 +88,9 @@ set backupdir=~/.vim/backup//
 " Don't start with things folded.
 set foldlevelstart=20
 set fillchars="fold:' '"
+
+" Automatically include system clipboard for yank and put
+set clipboard+=unnamedplus
 
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
@@ -110,17 +113,17 @@ Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/Konfekt/FastFold'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
 Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/adamheins/vim-indexed-search'
 Plug 'https://github.com/Shougo/neoinclude.vim'
 Plug 'https://github.com/neomake/neomake'
 Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
 Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
 Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
+Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
+Plug 'https://github.com/tpope/vim-repeat'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -130,6 +133,9 @@ Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/mrk21/yaml-vim'
 Plug 'https://github.com/chr4/nginx.vim'
 Plug 'lervag/vimtex'
+Plug 'https://github.com/andymass/vim-matchup'
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'https://github.com/rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -141,6 +147,11 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('smart_case', v:true)
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
+
+" Use deoplete as completion engine for vimtex.
+call deoplete#custom#var('omni', 'input_patterns', {
+      \ 'tex': g:vimtex#re#deoplete
+      \})
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1
@@ -237,6 +248,13 @@ augroup cppfiles
   au BufEnter *.cc let b:fswitchlocs = 'reg:|\v(src)(.*src)@!|include/**|,reg:|src.*|include/**|,include/**'
 augroup END
 
+" Clang format
+let g:clang_format#detect_style_file = 1
+
+" Matchup
+let g:matchup_override_vimtex = 1
+let g:matchup_matchparen_offscreen = {}
+
 " ================================= Search =================================== "
 
 set hlsearch
@@ -317,6 +335,9 @@ vmap J <Plug>(easymotion-j)
 nmap K <Plug>(easymotion-k)
 vmap K <Plug>(easymotion-k)
 
+nmap ; <Plug>(easymotion-next)
+vmap ; <Plug>(easymotion-next)
+
 " Escape does a number of convenience things now:
 " * Unhighlight searches
 " * Unhighlight misspelled words
@@ -348,19 +369,19 @@ nnoremap <leader>u :MundoToggle<CR>
 
 " Make interaction with the system clipboard easier.
 " Paste from system clipboard.
-noremap "" "+p
+" noremap "" "+p
 
 " Copy to system clipboard.
-vnoremap "' "+y
+" vnoremap "' "+y
 
 " Cut to system clipboard.
-vnoremap "d "+d
+" vnoremap "d "+d
 
 " Paste from the yank register more quickly.
-noremap "p "0p
+" noremap "p "0p
 
 " Make C-a page down like C-b, since C-b is used as the tmux prefix key.
-nnoremap <C-a> <C-b>
+" nnoremap <C-a> <C-b>
 
 " Don't overwrite the p buffer when pasting over something.
 " This is useful when you copy something and want to paste it in more than one
@@ -384,7 +405,3 @@ nmap <unique> <C-S>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <unique> <C-S>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
-" ============================= Auto Commands ================================ "
-
-" Get rid of the python omnifunc, because it can be really slow.
-au FileType python setlocal omnifunc=

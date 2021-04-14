@@ -79,7 +79,6 @@ Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/Konfekt/FastFold'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
 Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/adamheins/vim-indexed-search'
 Plug 'https://github.com/Shougo/neoinclude.vim'
 Plug 'https://github.com/neomake/neomake'
@@ -90,6 +89,7 @@ Plug 'https://github.com/adamheins/vim-simple-status'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'
+Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -111,10 +111,6 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
-
-" Gitgutter.
-let g:gitgutter_realtime = 1
-call gitgutter#disable()
 
 " FSwitch
 " Define search paths to switch between header and source files.
