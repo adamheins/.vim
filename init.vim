@@ -109,7 +109,7 @@ Plug 'https://github.com/vim-scripts/cmdalias.vim'
 Plug 'https://github.com/adamheins/vim-col'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'https://github.com/easymotion/vim-easymotion'
+" Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/Konfekt/FastFold'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
 Plug 'https://github.com/tpope/vim-fugitive'
@@ -124,6 +124,7 @@ Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/justinmk/vim-sneak'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -199,8 +200,8 @@ endfunction
 command! NeomakeToggle call NeomakeToggle()
 
 " Easymotion
-let g:EasyMotion_do_mapping = 0
-
+" let g:EasyMotion_do_mapping = 0
+"
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']
 let g:ctrlp_user_command = ['cscope.files', 'cat %s/cscope.files']
@@ -325,18 +326,24 @@ nnoremap gJ J
 nnoremap gK K
 
 " Easymotion mappings.
-nmap f <Plug>(easymotion-fl)
-vmap f <Plug>(easymotion-fl)
-nmap F <Plug>(easymotion-Fl)
-vmap F <Plug>(easymotion-Fl)
+" nmap f <Plug>(easymotion-fl)
+" vmap f <Plug>(easymotion-fl)
+" nmap F <Plug>(easymotion-Fl)
+" vmap F <Plug>(easymotion-Fl)
+"
+" nmap J <Plug>(easymotion-j)
+" vmap J <Plug>(easymotion-j)
+" nmap K <Plug>(easymotion-k)
+" vmap K <Plug>(easymotion-k)
+"
+" nmap ; <Plug>(easymotion-next)
+" vmap ; <Plug>(easymotion-next)
 
-nmap J <Plug>(easymotion-j)
-vmap J <Plug>(easymotion-j)
-nmap K <Plug>(easymotion-k)
-vmap K <Plug>(easymotion-k)
-
-nmap ; <Plug>(easymotion-next)
-vmap ; <Plug>(easymotion-next)
+" Sneak mappings
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 " Escape does a number of convenience things now:
 " * Unhighlight searches
