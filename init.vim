@@ -124,6 +124,7 @@ Plug 'https://github.com/rhysd/vim-grammarous'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
@@ -138,6 +139,10 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'https://github.com/rhysd/vim-clang-format'
 
 call plug#end()
+
+" Gutentags
+" Tag files are all generated in this directory
+let g:gutentags_cache_dir = '~/.vim/tags/'
 
 " Grammarous
 let g:grammarous#enable_spell_check = 1
