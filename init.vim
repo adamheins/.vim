@@ -203,9 +203,6 @@ endfunction
 
 command! NeomakeToggle call NeomakeToggle()
 
-" Easymotion
-" let g:EasyMotion_do_mapping = 0
-"
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']
 let g:ctrlp_user_command = ['cscope.files', 'cat %s/cscope.files']
@@ -328,20 +325,6 @@ nnoremap gk O<Esc>
 " Avoid accidentally triggering J/K behaviour when navigating.
 nnoremap gJ J
 nnoremap gK K
-
-" Easymotion mappings.
-" nmap f <Plug>(easymotion-fl)
-" vmap f <Plug>(easymotion-fl)
-" nmap F <Plug>(easymotion-Fl)
-" vmap F <Plug>(easymotion-Fl)
-"
-" nmap J <Plug>(easymotion-j)
-" vmap J <Plug>(easymotion-j)
-" nmap K <Plug>(easymotion-k)
-" vmap K <Plug>(easymotion-k)
-"
-" nmap ; <Plug>(easymotion-next)
-" vmap ; <Plug>(easymotion-next)
 
 " Sneak mappings
 map f <Plug>Sneak_f
