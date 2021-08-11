@@ -103,7 +103,7 @@ let g:python3_host_prog = '/home/adam/.pyenv/versions/3.7.1/bin/python3'
 " Plug plugin manager.
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/tpope/vim-abolish'
+"Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/ntpeters/vim-better-whitespace'
 Plug 'https://github.com/vim-scripts/cmdalias.vim'
 Plug 'https://github.com/adamheins/vim-col'
@@ -125,6 +125,7 @@ Plug 'https://github.com/jeetsukumaran/vim-buffergator'
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'https://github.com/tpope/vim-repeat'
 Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
+Plug 'https://github.com/embear/vim-localvimrc.git'
 
 "" Language/domain-specific plugins.
 Plug 'https://github.com/othree/html5.vim'
