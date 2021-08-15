@@ -137,6 +137,7 @@ Plug 'lervag/vimtex'
 Plug 'https://github.com/andymass/vim-matchup'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'https://github.com/rhysd/vim-clang-format'
+Plug 'https://github.com/cespare/vim-toml'
 
 call plug#end()
 
