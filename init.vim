@@ -140,6 +140,10 @@ Plug 'https://github.com/rhysd/vim-clang-format'
 
 call plug#end()
 
+" Buffergator
+" Sort buffer list by most recently used
+let g:buffergator_sort_regime = 'mru'
+
 " Gutentags
 " Tag files are all generated in this directory
 let g:gutentags_cache_dir = '~/.vim/tags/'
