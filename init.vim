@@ -92,6 +92,9 @@ set fillchars="fold:' '"
 " Automatically include system clipboard for yank and put
 set clipboard+=unnamedplus
 
+" Disable messages about insertion completion messages
+set shortmess+=c
+
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
 
@@ -137,6 +140,7 @@ Plug 'lervag/vimtex'
 Plug 'https://github.com/andymass/vim-matchup'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'https://github.com/rhysd/vim-clang-format'
+Plug 'https://github.com/cespare/vim-toml'
 
 call plug#end()
 
@@ -169,7 +173,7 @@ let NERDTreeMapUpdir = '..'
 " Neomake
 let g:neomake_verbose = 0
 let g:neomake_place_signs = 0
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 let g:neomake_error_sign = {
   \ 'text': 'E',
