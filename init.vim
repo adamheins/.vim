@@ -99,7 +99,7 @@ set shortmess+=c
 let g:netrw_browsex_viewer="xdg-open"
 
 " Required for deoplete
-let g:python3_host_prog = '/home/adam/.pyenv/versions/3.7.1/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " ================================ Plugins =================================== "
 
@@ -406,4 +406,3 @@ nmap <unique> <C-S>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <unique> <C-S>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <unique> <C-S>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-
