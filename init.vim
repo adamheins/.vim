@@ -106,41 +106,58 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Plug plugin manager.
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/ntpeters/vim-better-whitespace'
-Plug 'https://github.com/vim-scripts/cmdalias.vim'
-Plug 'https://github.com/adamheins/vim-col'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'https://github.com/Konfekt/FastFold'
-Plug 'https://github.com/derekwyatt/vim-fswitch'
-Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/Shougo/neoinclude.vim'
-Plug 'https://github.com/neomake/neomake'
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/adamheins/vim-simple-status'
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'https://github.com/simnalamburt/vim-mundo'
-Plug 'https://github.com/rhysd/vim-grammarous'
-Plug 'https://github.com/jeetsukumaran/vim-buffergator'
-Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
-Plug 'https://github.com/tpope/vim-repeat'
-Plug 'https://github.com/justinmk/vim-sneak'
-Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
-Plug 'https://github.com/embear/vim-localvimrc.git'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'vim-scripts/cmdalias.vim'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'tpope/vim-fugitive'
+Plug 'Shougo/neoinclude.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'adamheins/vim-simple-status'
+Plug 'tpope/vim-surround'
+Plug 'tomtom/tcomment_vim'
+Plug 'simnalamburt/vim-mundo'
+Plug 'rhysd/vim-grammarous'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'adamheins/vim-highlight-match-under-cursor'
+Plug 'tpope/vim-repeat'
+Plug 'justinmk/vim-sneak'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'embear/vim-localvimrc'
+" Plug 'adamheins/vim-col'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Konfekt/FastFold'
+" Plug 'neomake/neomake'
 
-"" Language/domain-specific plugins.
-Plug 'https://github.com/othree/html5.vim'
-Plug 'https://github.com/daeyun/vim-matlab'
-Plug 'https://github.com/digitaltoad/vim-pug'
-Plug 'https://github.com/rust-lang/rust.vim'
-Plug 'https://github.com/mrk21/yaml-vim'
-Plug 'https://github.com/chr4/nginx.vim'
+" fzf is used to do fast searching of files and words
+" previously searching for files was done with ctrlp
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Language/domain-specific plugins.
+" TODO: probably replace some of these with LSP stuff?
+Plug 'othree/html5.vim'
+Plug 'daeyun/vim-matlab'
+Plug 'digitaltoad/vim-pug'
+Plug 'rust-lang/rust.vim'
+Plug 'mrk21/yaml-vim'
+Plug 'chr4/nginx.vim'
 Plug 'lervag/vimtex'
-Plug 'https://github.com/andymass/vim-matchup'
+Plug 'andymass/vim-matchup'
 Plug 'psf/black', { 'branch': 'stable' }
-Plug 'https://github.com/rhysd/vim-clang-format'
-Plug 'https://github.com/cespare/vim-toml'
+Plug 'rhysd/vim-clang-format'
+Plug 'cespare/vim-toml'
+
+" nvim-cmp for autocompletion
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-omni'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
@@ -155,16 +172,8 @@ let g:gutentags_cache_dir = '~/.vim/tags/'
 " Grammarous
 let g:grammarous#enable_spell_check = 1
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('smart_case', v:true)
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
-
-" Use deoplete as completion engine for vimtex.
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
+" LSP/autocompletion lua config
+lua require('lsp')
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1
@@ -347,6 +356,12 @@ map T <Plug>Sneak_T
 " * Clear matches
 " * Clear the status area
 nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:call clearmatches()<CR>:echo ""<CR><Esc>
+
+" fzf
+" Open text search window by pressing Ctrl-F
+noremap <C-F> :Rg<CR>
+" Open file search window by pressing Ctrl-P
+noremap <C-P> :Files<CR>
 
 " Make switching between splits easier.
 nnoremap <C-J> <C-W><C-J>

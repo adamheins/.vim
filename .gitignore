@@ -7,3 +7,4 @@ plugged
 quill.*
 spell/
 tags/
+autoload/plug.vim.old

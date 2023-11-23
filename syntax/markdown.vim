@@ -114,6 +114,10 @@ syn match  mkdRule         /^\s*_\s\{0,1}_\s\{0,1}_$/
 syn match  mkdRule         /^\s*-\{3,}$/
 syn match  mkdRule         /^\s*\*\{3,5}$/
 
+"custom additions to highlight inline and block math
+syn region mkdCode         start=/\(\$\)\@<!\$\(\$\)\@!/ end=/\(\$\)\@<!\$\(\$\)\@!/
+syn region mkdCode         start=/^\$\$$/              end=/^\$\$$/
+
 " YAML frontmatter
 if get(g:, 'vim_markdown_frontmatter', 0)
   syn include @yamlTop syntax/yaml.vim
