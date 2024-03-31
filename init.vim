@@ -69,7 +69,8 @@ set completeopt-=preview
 set updatetime=250
 
 " Use cscope rather than ctags.
-set cscopetag
+" NOTE: no longer supported as of neovim 0.9
+" set cscopetag
 
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
@@ -123,6 +124,7 @@ Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
+
 " Plug 'adamheins/vim-col'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -180,45 +182,45 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
 
 " Neomake
-let g:neomake_verbose = 0
-let g:neomake_place_signs = 0
-" autocmd! BufWritePost * Neomake
+" let g:neomake_verbose = 0
+" let g:neomake_place_signs = 0
+" " autocmd! BufWritePost * Neomake
 
-let g:neomake_error_sign = {
-  \ 'text': 'E',
-  \ 'texthl': 'NeomakeErrorSign',
-  \ }
-let g:neomake_warning_sign = {
-  \ 'text': 'W',
-  \ 'texthl': 'NeomakeWarningSign',
-  \ }
-let g:neomake_message_sign = {
-  \ 'text': 'M',
-  \ 'texthl': 'NeomakeMessageSign',
-  \ }
-let g:neomake_info_sign = {
-  \ 'text': 'I',
-  \ 'texthl': 'NeomakeInfoSign',
-  \ }
-augroup neomake_signs
-  au!
-  au ColorScheme * hi NeomakeErrorSign   ctermfg=red
-  au ColorScheme * hi NeomakeWarningSign ctermfg=yellow
-  au ColorScheme * hi NeomakeMessageSign ctermfg=white
-  au ColorScheme * hi NeomakeInfoSign    ctermfg=blue
-augroup END
-
-" Toggle the neomake messages appearing in the gutter.
-function NeomakeToggle()
-  if g:neomake_place_signs == 1
-    let g:neomake_place_signs = 0
-  else
-    let g:neomake_place_signs = 1
-  endif
-  Neomake
-endfunction
-
-command! NeomakeToggle call NeomakeToggle()
+" let g:neomake_error_sign = {
+"   \ 'text': 'E',
+"   \ 'texthl': 'NeomakeErrorSign',
+"   \ }
+" let g:neomake_warning_sign = {
+"   \ 'text': 'W',
+"   \ 'texthl': 'NeomakeWarningSign',
+"   \ }
+" let g:neomake_message_sign = {
+"   \ 'text': 'M',
+"   \ 'texthl': 'NeomakeMessageSign',
+"   \ }
+" let g:neomake_info_sign = {
+"   \ 'text': 'I',
+"   \ 'texthl': 'NeomakeInfoSign',
+"   \ }
+" augroup neomake_signs
+"   au!
+"   au ColorScheme * hi NeomakeErrorSign   ctermfg=red
+"   au ColorScheme * hi NeomakeWarningSign ctermfg=yellow
+"   au ColorScheme * hi NeomakeMessageSign ctermfg=white
+"   au ColorScheme * hi NeomakeInfoSign    ctermfg=blue
+" augroup END
+"
+" " Toggle the neomake messages appearing in the gutter.
+" function NeomakeToggle()
+"   if g:neomake_place_signs == 1
+"     let g:neomake_place_signs = 0
+"   else
+"     let g:neomake_place_signs = 1
+"   endif
+"   Neomake
+" endfunction
+"
+" command! NeomakeToggle call NeomakeToggle()
 
 " Ctrl-p
 let g:ctrlp_root_markers = ['cscope.files']

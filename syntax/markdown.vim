@@ -114,8 +114,9 @@ syn match  mkdRule         /^\s*_\s\{0,1}_\s\{0,1}_$/
 syn match  mkdRule         /^\s*-\{3,}$/
 syn match  mkdRule         /^\s*\*\{3,5}$/
 
-"custom additions to highlight inline and block math
-syn region mkdCode         start=/\(\$\)\@<!\$\(\$\)\@!/ end=/\(\$\)\@<!\$\(\$\)\@!/
+" custom additions to highlight inline and block math
+" TODO these currently break on normal $ signs
+" syn region mkdCode         start=/\(\$\)\@<!\$\(\$\)\@!/ end=/\(\$\)\@<!\$\(\$\)\@!/
 syn region mkdCode         start=/^\$\$$/              end=/^\$\$$/
 
 " YAML frontmatter
