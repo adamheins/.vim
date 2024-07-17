@@ -139,7 +139,7 @@ Plug 'junegunn/fzf.vim'
 " Language/domain-specific plugins.
 " TODO: probably replace some of these with LSP stuff?
 Plug 'othree/html5.vim'
-Plug 'daeyun/vim-matlab'
+" Plug 'daeyun/vim-matlab'
 Plug 'digitaltoad/vim-pug'
 Plug 'rust-lang/rust.vim'
 Plug 'mrk21/yaml-vim'
