@@ -68,10 +68,6 @@ set completeopt-=preview
 " Reduce updatetime to something more reasonable. Makes gitgutter more usable.
 set updatetime=250
 
-" Use cscope rather than ctags.
-" NOTE: no longer supported as of neovim 0.9
-" set cscopetag
-
 " Don't insert a double space when wrapping sentences.
 set nojoinspaces
 
@@ -125,12 +121,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'embear/vim-localvimrc'
 
-" Plug 'adamheins/vim-col'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'Konfekt/FastFold'
-" Plug 'neomake/neomake'
-
 " fzf is used to do fast searching of files and words
 " previously searching for files was done with ctrlp
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -139,7 +129,6 @@ Plug 'junegunn/fzf.vim'
 " Language/domain-specific plugins.
 " TODO: probably replace some of these with LSP stuff?
 Plug 'othree/html5.vim'
-Plug 'daeyun/vim-matlab'
 Plug 'digitaltoad/vim-pug'
 Plug 'rust-lang/rust.vim'
 Plug 'mrk21/yaml-vim'
@@ -181,50 +170,7 @@ lua require('lsp')
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
 
-" Neomake
-" let g:neomake_verbose = 0
-" let g:neomake_place_signs = 0
-" " autocmd! BufWritePost * Neomake
-
-" let g:neomake_error_sign = {
-"   \ 'text': 'E',
-"   \ 'texthl': 'NeomakeErrorSign',
-"   \ }
-" let g:neomake_warning_sign = {
-"   \ 'text': 'W',
-"   \ 'texthl': 'NeomakeWarningSign',
-"   \ }
-" let g:neomake_message_sign = {
-"   \ 'text': 'M',
-"   \ 'texthl': 'NeomakeMessageSign',
-"   \ }
-" let g:neomake_info_sign = {
-"   \ 'text': 'I',
-"   \ 'texthl': 'NeomakeInfoSign',
-"   \ }
-" augroup neomake_signs
-"   au!
-"   au ColorScheme * hi NeomakeErrorSign   ctermfg=red
-"   au ColorScheme * hi NeomakeWarningSign ctermfg=yellow
-"   au ColorScheme * hi NeomakeMessageSign ctermfg=white
-"   au ColorScheme * hi NeomakeInfoSign    ctermfg=blue
-" augroup END
-"
-" " Toggle the neomake messages appearing in the gutter.
-" function NeomakeToggle()
-"   if g:neomake_place_signs == 1
-"     let g:neomake_place_signs = 0
-"   else
-"     let g:neomake_place_signs = 1
-"   endif
-"   Neomake
-" endfunction
-"
-" command! NeomakeToggle call NeomakeToggle()
-
 " Ctrl-p
-let g:ctrlp_root_markers = ['cscope.files']
-let g:ctrlp_user_command = ['cscope.files', 'cat %s/cscope.files']
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_regexp = 1
 
@@ -386,22 +332,6 @@ noremap <leader>n :NERDTreeFind<CR>
 " Use Mundo as a 'super undo'
 nnoremap <leader>u :MundoToggle<CR>
 
-" Make interaction with the system clipboard easier.
-" Paste from system clipboard.
-" noremap "" "+p
-
-" Copy to system clipboard.
-" vnoremap "' "+y
-
-" Cut to system clipboard.
-" vnoremap "d "+d
-
-" Paste from the yank register more quickly.
-" noremap "p "0p
-
-" Make C-a page down like C-b, since C-b is used as the tmux prefix key.
-" nnoremap <C-a> <C-b>
-
 " Don't overwrite the p buffer when pasting over something.
 " This is useful when you copy something and want to paste it in more than one
 " place.
@@ -413,13 +343,3 @@ vnoremap Q $
 
 " tComment makes gc comment out code. I accidentally hit cg too often.
 vmap cg gc
-
-" Cscope mappings.
-nmap <unique> <C-S>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <unique> <C-S>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <unique> <C-S>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <unique> <C-S>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <unique> <C-S>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <unique> <C-S>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <unique> <C-S>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <unique> <C-S>d :cs find d <C-R>=expand("<cword>")<CR><CR>
