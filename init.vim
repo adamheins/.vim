@@ -157,6 +157,9 @@ call plug#end()
 " Sort buffer list by most recently used
 let g:buffergator_sort_regime = 'mru'
 
+" Only show name of parent directory rather than absolute path
+let g:buffergator_display_regime = 'parentdir'
+
 " Grammarous
 let g:grammarous#enable_spell_check = 1
 
