@@ -120,8 +120,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'adamheins/vim-highlight-match-under-cursor'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'embear/vim-localvimrc'
+Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " fzf is used to do fast searching of files and words
@@ -142,7 +141,7 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
 Plug 'cespare/vim-toml'
 
-" nvim-cmp for autocompletion
+" nvim-cmp for autocompletion and other LSP stuff
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -158,10 +157,6 @@ call plug#end()
 " Buffergator
 " Sort buffer list by most recently used
 let g:buffergator_sort_regime = 'mru'
-
-" Gutentags
-" Tag files are all generated in this directory
-let g:gutentags_cache_dir = '~/.vim/tags/'
 
 " Grammarous
 let g:grammarous#enable_spell_check = 1
@@ -227,6 +222,13 @@ let g:clang_format#detect_style_file = 1
 " Matchup
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_offscreen = {}
+
+" Copilot
+let g:copilot_filetypes = {
+    \ '*': v:false,
+    \ 'python': v:true,
+    \ 'cpp': v:true,
+    \ }
 
 " ================================= Search =================================== "
 
@@ -349,3 +351,7 @@ vnoremap Q $
 
 " tComment makes gc comment out code. I accidentally hit cg too often.
 vmap cg gc
+
+" I already use Tab for autocomplete, so use Ctrl-J for copilot.
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true

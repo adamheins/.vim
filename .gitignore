@@ -8,3 +8,5 @@ quill.*
 spell/
 tags/
 autoload/plug.vim.old
+tags.lock
+tags.temp
