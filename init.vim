@@ -95,7 +95,6 @@ set shortmess+=c
 " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
 let g:netrw_browsex_viewer="xdg-open"
 
-" Required for deoplete
 let g:python3_host_prog = '/usr/bin/python3'
 
 " ================================ Plugins =================================== "
