@@ -119,6 +119,7 @@ Plug 'adamheins/vim-highlight-match-under-cursor'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
 Plug 'github/copilot.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " fzf is used to do fast searching of files and words
 " previously searching for files was done with ctrlp
@@ -160,6 +161,9 @@ let g:grammarous#enable_spell_check = 1
 
 " LSP/autocompletion lua config
 lua require('lsp')
+
+" nvim-treesitter setup
+lua require('treesitter')
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1
