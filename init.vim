@@ -97,7 +97,7 @@ let g:netrw_browsex_viewer="xdg-open"
 
 let g:python3_host_prog = '/usr/bin/python3'
 
-set notermguicolors
+" set notermguicolors
 
 " ================================ Plugins =================================== "
 
@@ -247,7 +247,7 @@ set expandtab
 " ================================ Colours =================================== "
 
 syntax on
-colorscheme lucid
+colorscheme molokai
 
 set cursorline
 
