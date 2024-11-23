@@ -129,16 +129,16 @@ Plug 'junegunn/fzf.vim'
 
 " Language/domain-specific plugins.
 " TODO: probably replace some of these with LSP stuff?
-Plug 'othree/html5.vim'
-Plug 'digitaltoad/vim-pug'
-Plug 'rust-lang/rust.vim'
-Plug 'mrk21/yaml-vim'
-Plug 'chr4/nginx.vim'
+" Plug 'othree/html5.vim'
+" Plug 'digitaltoad/vim-pug'
+" Plug 'rust-lang/rust.vim'
+" Plug 'mrk21/yaml-vim'
+" Plug 'chr4/nginx.vim'
+" Plug 'andymass/vim-matchup'
+" Plug 'cespare/vim-toml'
 Plug 'lervag/vimtex'
-Plug 'andymass/vim-matchup'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
-Plug 'cespare/vim-toml'
 
 " nvim-cmp for autocompletion and other LSP stuff
 Plug 'neovim/nvim-lspconfig'

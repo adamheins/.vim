@@ -53,7 +53,7 @@ hi Folded          guifg=#465457 guibg=#000000
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
-hi IncSearch       guifg=#E6DB74 guibg=#000000
+hi IncSearch       guifg=#F8F8F2 guibg=#F92672
 
 hi Keyword         guifg=#F92672               gui=bold
 hi Label           guifg=#E6DB74               gui=none
@@ -98,7 +98,7 @@ hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
 hi Typedef         guifg=#66D9EF
 hi Type            guifg=#66D9EF               gui=none
-hi Underlined      guifg=#808080               gui=underline
+hi Underlined      guifg=#F8F8F2               gui=underline
 
 hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
 hi VisualNOS       guifg=#000000 guibg=#E6DB74
@@ -130,6 +130,9 @@ else
    hi NonText         guifg=#465457
    hi SpecialKey      guifg=#465457
 end
+
+" Custom highlight groups
+highlight Emphasis    guifg=#C9AEFC guibg=none gui=none
 
 "
 " Support for 256-color terminal
