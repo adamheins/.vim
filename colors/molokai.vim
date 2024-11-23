@@ -32,7 +32,8 @@ hi Character       guifg=#E6DB74
 hi Number          guifg=#66D9EF
 hi String          guifg=#E6DB74
 hi Conditional     guifg=#F92672               gui=bold
-hi Constant        guifg=#C9AEFC               gui=bold
+" hi Constant        guifg=#C9AEFC               gui=bold
+hi Constant        guifg=#F8F8F2 guibg=#000000
 hi Cursor          guifg=#000000 guibg=#F8F8F0
 hi iCursor         guifg=#000000 guibg=#F8F8F0
 hi Debug           guifg=#BCA3A3               gui=bold
