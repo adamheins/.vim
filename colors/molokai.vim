@@ -61,7 +61,7 @@ hi Label           guifg=#E6DB74               gui=none
 hi Macro           guifg=#C4BE89               gui=italic
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
-hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
+hi MatchParen      guifg=#A6E22E               gui=bold
 hi ModeMsg         guifg=#E6DB74
 hi MoreMsg         guifg=#E6DB74
 hi Operator        guifg=#F92672
@@ -133,7 +133,7 @@ else
 end
 
 " Custom highlight groups
-highlight Emphasis    guifg=#C9AEFC guibg=none gui=none
+highlight Emphasis    guifg=#F92672 guibg=none gui=none
 
 "
 " Support for 256-color terminal
