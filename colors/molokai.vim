@@ -134,6 +134,7 @@ end
 
 " Custom highlight groups
 highlight Emphasis    guifg=#F92672 guibg=none gui=none
+highlight Code        guifg=#66D9EF
 
 "
 " Support for 256-color terminal
