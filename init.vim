@@ -311,9 +311,9 @@ map T <Plug>Sneak_T
 " * Unhighlight searches
 " * Unhighlight misspelled words
 " * Turn off cursorcolumn (only on when searching)
-" * Clear matches
+" * Clear highlighted match under cursor
 " * Clear the status area
-nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:call clearmatches()<CR>:echo ""<CR><Esc>
+nnoremap <Esc> :noh<CR>:call SpcOff()<CR>:set nocursorcolumn<CR>:call HighlightMatchUnderCursor#matchdelete()<CR>:echo ""<CR><Esc>
 
 " fzf
 " Open text search window by pressing Ctrl-F
