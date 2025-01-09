@@ -357,3 +357,6 @@ vmap cg gc
 " I already use Tab for autocomplete, so use Ctrl-J for copilot.
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+
+
+" set tagfunc=v:lua.vim.lsp.tagfunc

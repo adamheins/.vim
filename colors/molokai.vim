@@ -33,7 +33,7 @@ hi Number          guifg=#66D9EF
 hi String          guifg=#E6DB74
 hi Conditional     guifg=#F92672               gui=bold
 " hi Constant        guifg=#C9AEFC               gui=bold
-hi Constant        guifg=#F8F8F2 guibg=#000000
+hi Constant        guifg=#F8F8F2
 hi Cursor          guifg=#000000 guibg=#F8F8F0
 hi iCursor         guifg=#000000 guibg=#F8F8F0
 hi Debug           guifg=#BCA3A3               gui=bold
@@ -95,7 +95,7 @@ hi StorageClass    guifg=#FD971F               gui=italic
 hi Structure       guifg=#66D9EF
 hi Tag             guifg=#F92672               gui=italic
 hi Title           guifg=#ef5939
-hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
+hi Todo            guifg=#F92672 guibg=bg      gui=bold
 
 hi Typedef         guifg=#66D9EF
 hi Type            guifg=#66D9EF               gui=none
