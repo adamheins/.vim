@@ -6,8 +6,6 @@
 " Shorten the command to strip trailing whitespace.
 Alias sws StripWhitespace
 
-Alias col Col
-
 " Reload .vimrc without closing vim.
 Alias reload Reload
 
@@ -23,16 +21,6 @@ Alias gd Gdiff
 Alias nm Neomake
 Alias nt NeomakeToggle
 
-" Cscope
-call CmdAlias('csc', 'cs find c')
-call CmdAlias('cse', 'cs find e')
-call CmdAlias('csd', 'cs find d')
-call CmdAlias('csf', 'cs find f')
-call CmdAlias('csg', 'cs find g')
-call CmdAlias('csi', 'cs find i')
-call CmdAlias('css', 'cs find s')
-call CmdAlias('cst', 'cs find t')
-
 " FSwitch
 call CmdAlias('fs', 'FS')
 
@@ -40,4 +28,4 @@ call CmdAlias('fs', 'FS')
 call CmdAlias('spc', 'call SpcToggle()')
 
 " JSON formatting.
-call CmdAlias('json', '%!python -m json.tool')
+"call CmdAlias('json', '%!python -m json.tool')

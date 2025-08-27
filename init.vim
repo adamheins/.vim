@@ -112,7 +112,6 @@ Plug 'Shougo/neoinclude.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'adamheins/vim-simple-status'
 Plug 'tpope/vim-surround'
-Plug 'tomtom/tcomment_vim'
 Plug 'simnalamburt/vim-mundo'
 Plug 'rhysd/vim-grammarous'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -128,14 +127,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Language/domain-specific plugins.
-" TODO: probably replace some of these with LSP stuff?
-" Plug 'othree/html5.vim'
-" Plug 'digitaltoad/vim-pug'
-" Plug 'rust-lang/rust.vim'
-" Plug 'mrk21/yaml-vim'
-" Plug 'chr4/nginx.vim'
-" Plug 'andymass/vim-matchup'
-" Plug 'cespare/vim-toml'
 Plug 'lervag/vimtex'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
@@ -172,6 +163,10 @@ lua require('treesitter')
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
+
+" NERDCommenter
+"let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
 
 " Ctrl-p
 let g:ctrlp_extensions = ['tag']
@@ -338,6 +333,7 @@ nnoremap <leader>m :enew<CR>
 
 " Toggle NERDTree.
 noremap <leader>n :NERDTreeFind<CR>
+" noremap <leader>n :Vexplore<CR>
 
 " Use Mundo as a 'super undo'
 nnoremap <leader>u :MundoToggle<CR>
@@ -351,7 +347,7 @@ xnoremap p pgvy
 nnoremap Q $
 vnoremap Q $
 
-" tComment makes gc comment out code. I accidentally hit cg too often.
+" gc comments out code, but I accidentally hit cg too often.
 vmap cg gc
 
 " I already use Tab for autocomplete, so use Ctrl-J for copilot.
