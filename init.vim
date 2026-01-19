@@ -89,6 +89,8 @@ set fillchars="fold:' '"
 " Automatically include system clipboard for yank and put
 set clipboard+=unnamedplus
 
+let g:clipboard="xclip"
+
 " Disable messages about insertion completion messages
 set shortmess+=c
 
@@ -162,10 +164,6 @@ lua require('treesitter')
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMapUpdir = '..'
-
-" NERDCommenter
-"let g:NERDCreateDefaultMappings = 1
-let g:NERDSpaceDelims = 1
 
 " Ctrl-p
 let g:ctrlp_extensions = ['tag']
