@@ -55,6 +55,7 @@ hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
 hi IncSearch       guifg=#F8F8F2 guibg=#F92672
+hi CurSearch       guibg=#F92672 guifg=#F8F8F2
 
 hi Keyword         guifg=#F92672               gui=bold
 hi Label           guifg=#E6DB74               gui=none
@@ -176,6 +177,7 @@ if &t_Co > 255
    hi Identifier      ctermfg=208               cterm=none
    hi Ignore          ctermfg=244 ctermbg=232
    hi IncSearch       ctermfg=193 ctermbg=16
+   hi CurSearch                   ctermbg=88    cterm=NONE
 
    hi keyword         ctermfg=161               cterm=bold
    hi Label           ctermfg=229               cterm=none
