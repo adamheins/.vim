@@ -132,8 +132,7 @@ Plug 'lervag/vimtex'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
 
-" nvim-cmp for autocompletion and other LSP stuff
-Plug 'neovim/nvim-lspconfig'
+" nvim-cmp for autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -154,6 +153,9 @@ let g:buffergator_display_regime = 'parentdir'
 
 " Grammarous
 let g:grammarous#enable_spell_check = 1
+
+" Completion plugin
+lua require('completion')
 
 " LSP/autocompletion lua config
 lua require('lsp')
