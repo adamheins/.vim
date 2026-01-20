@@ -130,6 +130,9 @@ Plug 'lervag/vimtex'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
 
+" LSP server configs
+Plug 'neovim/nvim-lspconfig'
+
 " nvim-cmp for autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
