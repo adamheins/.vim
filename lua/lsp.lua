@@ -1,3 +1,8 @@
+-- To do custom configuration, add options here:
+-- vim.lsp.config('pylsp', {})
+-- vim.lsp.config('clangd', {})
+-- vim.lsp.config('texlab', {})
+
 -- enable LSPs
 vim.lsp.enable('pylsp')
 vim.lsp.enable('clangd')
