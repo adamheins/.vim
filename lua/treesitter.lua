@@ -2,6 +2,8 @@
 require('nvim-treesitter.configs').setup({
   -- treesitter doesn't play nice with vimtex
   highlight = { enable = true, disable = {"latex"} },
-  indent = { enable = true, },
+
+  -- treesitter indent doesn't work properly for markdown lists
+  indent = { enable = true, disable = {"markdown"} },
   additional_vim_regex_highlighting = false,
 })
