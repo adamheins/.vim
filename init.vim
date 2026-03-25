@@ -122,6 +122,9 @@ Plug 'justinmk/vim-sneak'
 Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Interface for code formatters
+Plug 'stevearc/conform.nvim'
+
 " fzf is used to do fast searching of files and words
 " previously searching for files was done with ctrlp
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -129,8 +132,8 @@ Plug 'junegunn/fzf.vim'
 
 " Language/domain-specific plugins.
 Plug 'lervag/vimtex'
-Plug 'psf/black', { 'branch': 'stable' }
-Plug 'rhysd/vim-clang-format'
+"Plug 'psf/black', { 'branch': 'stable' }
+"Plug 'rhysd/vim-clang-format'
 
 " LSP server configs
 Plug 'neovim/nvim-lspconfig'
@@ -165,6 +168,9 @@ lua require('lsp')
 
 " nvim-treesitter setup
 lua require('treesitter')
+
+" code formatters via conform.vim
+lua require('formatting')
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1
