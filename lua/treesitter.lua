@@ -1,5 +1,5 @@
 -- Config for nvim-treesitter
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter').setup({
   -- treesitter doesn't play nice with vimtex
   highlight = { enable = true, disable = {"latex"} },
 

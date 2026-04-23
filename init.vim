@@ -119,8 +119,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
-Plug 'github/copilot.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
 
 " Interface for code formatters
 Plug 'stevearc/conform.nvim'
@@ -132,8 +131,6 @@ Plug 'junegunn/fzf.vim'
 
 " Language/domain-specific plugins.
 Plug 'lervag/vimtex'
-"Plug 'psf/black', { 'branch': 'stable' }
-"Plug 'rhysd/vim-clang-format'
 
 " LSP server configs
 Plug 'neovim/nvim-lspconfig'
