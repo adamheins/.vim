@@ -1,125 +1,125 @@
 " Run time configuration for neovim.
 " Adam Heins
 
-" ================================ General =================================== "
+  " ================================ General =================================== "
 
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-filetype indent plugin on
+  " Attempt to determine the type of a file based on its name and possibly its
+  " contents. Use this to allow intelligent auto-indenting for each filetype,
+  " and for plugins that are filetype specific.
+  filetype indent plugin on
 
-" Allow reuse of same window and switching from unsaved buffer without saving.
-set hidden
+  " Allow reuse of same window and switching from unsaved buffer without saving.
+  set hidden
 
-" Show partial commands in the last line of the screen
-set showcmd
+  " Show partial commands in the last line of the screen
+  set showcmd
 
-" This must be set to avoid a bug causing garbage characters to appear after
-" the cursor.
-" set guicursor=
+  " This must be set to avoid a bug causing garbage characters to appear after
+  " the cursor.
+  " set guicursor=
 
-" Visual autocomplete for commands.
-set wildmenu
+  " Visual autocomplete for commands.
+  set wildmenu
 
-" Only redraw when needed.
-set lazyredraw
+  " Only redraw when needed.
+  set lazyredraw
 
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-set nomodeline
+  " Modelines have historically been a source of security vulnerabilities. As
+  " such, it may be a good idea to disable them and use the securemodelines
+  " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
+  set nomodeline
 
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
+  " Allow backspacing over autoindent, line breaks and start of insert action
+  set backspace=indent,eol,start
 
-" Stop certain movements from always going to the first character of a line.
-set nostartofline
+  " Stop certain movements from always going to the first character of a line.
+  set nostartofline
 
-" Always display the status line, even if only one window is displayed
-set laststatus=2
+  " Always display the status line, even if only one window is displayed
+  set laststatus=2
 
-" Instead of failing a command because of unsaved changes, instead raise a
-" dialog asking if you wish to save changed files.
-set confirm
+  " Instead of failing a command because of unsaved changes, instead raise a
+  " dialog asking if you wish to save changed files.
+  set confirm
 
-" Don't flash or beep.
-set visualbell
+  " Don't flash or beep.
+  set visualbell
 
-" Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
-set cmdheight=2
+  " Set the command window height to 2 lines, to avoid many cases of having to
+  " "press <Enter> to continue"
+  set cmdheight=2
 
-" Display line numbers on the left
-set number
+  " Display line numbers on the left
+  set number
 
-" Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=0
+  " Quickly time out on keycodes, but never time out on mappings
+  set notimeout ttimeout ttimeoutlen=0
 
-" Hide the mode status messages, since mode is shown in status line.
-set noshowmode
+  " Hide the mode status messages, since mode is shown in status line.
+  set noshowmode
 
-" The vim C syntax highlighter has a grudge against compound struct literals.
-" Make it stop.
-let c_no_curly_error=1
+  " The vim C syntax highlighter has a grudge against compound struct literals.
+  " Make it stop.
+  let c_no_curly_error=1
 
-" Get rid of the preview scratch window.
-set completeopt-=preview
+  " Get rid of the preview scratch window.
+  set completeopt-=preview
 
-" Reduce updatetime to something more reasonable. Makes gitgutter more usable.
-set updatetime=250
+  " Reduce updatetime to something more reasonable. Makes gitgutter more usable.
+  set updatetime=250
 
-" Don't insert a double space when wrapping sentences.
-set nojoinspaces
+  " Don't insert a double space when wrapping sentences.
+  set nojoinspaces
 
-" Swapfiles on and saved to a single place.
-set swapfile
-set directory=~/.vim/swap//
+  " Swapfiles on and saved to a single place.
+  set swapfile
+  set directory=~/.vim/swap//
 
-" Protect against crash-during-write but don't keep the backup after
-" successful write.
-set writebackup
-set nobackup
-set backupcopy=auto
-set backupdir=~/.vim/backup//
+  " Protect against crash-during-write but don't keep the backup after
+  " successful write.
+  set writebackup
+  set nobackup
+  set backupcopy=auto
+  set backupdir=~/.vim/backup//
 
-" Don't start with things folded.
-set foldlevelstart=20
-set fillchars="fold:' '"
+  " Don't start with things folded.
+  set foldlevelstart=20
+  set fillchars="fold:' '"
 
-" Automatically include system clipboard for yank and put
-set clipboard+=unnamedplus
+  " Automatically include system clipboard for yank and put
+  set clipboard+=unnamedplus
 
-let g:clipboard="xclip"
+  let g:clipboard="xclip"
 
-" Disable messages about insertion completion messages
-set shortmess+=c
+  " Disable messages about insertion completion messages
+  set shortmess+=c
 
-" Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
-let g:netrw_browsex_viewer="xdg-open"
+  " Use xdg-open to open files/URLs under the cursor when pressing 'gx'.
+  let g:netrw_browsex_viewer="xdg-open"
 
-let g:python3_host_prog = '/usr/bin/python3'
+  let g:python3_host_prog = '/usr/bin/python3'
 
-" set notermguicolors
+  " set notermguicolors
 
-" ================================ Plugins =================================== "
+  " ================================ Plugins =================================== "
 
-" Plug plugin manager.
-call plug#begin('~/.vim/plugged')
+  " Plug plugin manager.
+  call plug#begin('~/.vim/plugged')
 
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'vim-scripts/cmdalias.vim'
-Plug 'derekwyatt/vim-fswitch'
-Plug 'tpope/vim-fugitive'
-Plug 'Shougo/neoinclude.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'adamheins/vim-simple-status'
-Plug 'tpope/vim-surround'
-Plug 'simnalamburt/vim-mundo'
-Plug 'rhysd/vim-grammarous'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'tpope/vim-repeat'
-Plug 'justinmk/vim-sneak'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'vim-scripts/cmdalias.vim'
+  Plug 'derekwyatt/vim-fswitch'
+  Plug 'tpope/vim-fugitive'
+  Plug 'Shougo/neoinclude.vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'adamheins/vim-simple-status'
+  Plug 'tpope/vim-surround'
+  Plug 'simnalamburt/vim-mundo'
+  Plug 'rhysd/vim-grammarous'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'tpope/vim-repeat'
+  Plug 'justinmk/vim-sneak'
+  Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
 
 " Interface for code formatters
 Plug 'stevearc/conform.nvim'
