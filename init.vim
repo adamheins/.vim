@@ -119,7 +119,6 @@ Plug 'rhysd/vim-grammarous'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tpope/vim-repeat'
 Plug 'justinmk/vim-sneak'
-Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Interface for code formatters
@@ -132,8 +131,6 @@ Plug 'junegunn/fzf.vim'
 
 " Language/domain-specific plugins.
 Plug 'lervag/vimtex'
-"Plug 'psf/black', { 'branch': 'stable' }
-"Plug 'rhysd/vim-clang-format'
 
 " LSP server configs
 Plug 'neovim/nvim-lspconfig'
@@ -145,8 +142,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-omni'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
@@ -160,9 +155,6 @@ let g:buffergator_display_regime = 'parentdir'
 " Grammarous
 let g:grammarous#enable_spell_check = 1
 
-" Completion plugin
-lua require('completion')
-
 " LSP/autocompletion lua config
 lua require('lsp')
 
@@ -171,6 +163,12 @@ lua require('treesitter')
 
 " code formatters via conform.vim
 lua require('formatting')
+
+"lua require('codecompanion-config')
+
+" Completion plugin
+lua require('completion')
+
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1

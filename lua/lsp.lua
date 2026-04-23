@@ -4,9 +4,16 @@
 -- vim.lsp.config('texlab', {})
 
 -- enable LSPs
-vim.lsp.enable('pylsp')
-vim.lsp.enable('clangd')
 vim.lsp.enable('texlab')
+
+-- uv tool install python-lsp-server
+vim.lsp.enable('pylsp')
+
+-- sudo apt install clangd
+vim.lsp.enable('clangd')
+
+-- npm install -g typescript typescript-language-server
+vim.lsp.enable('ts_ls')
 
 -- hide diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end

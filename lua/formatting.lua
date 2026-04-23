@@ -1,9 +1,10 @@
 require("conform").setup({
   formatters_by_ft = {
-    -- Conform will run multiple formatters sequentially
+    -- Conform will run multiple formatters sequentially if more than one
+    -- provided
     cpp = { "clang-format" },
     python = { "black" },
-    javascript = { "prettierd", "prettier", stop_after_first = true },
+    javascript = { "prettier" },
   },
 })
 
